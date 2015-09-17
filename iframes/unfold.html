@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+     <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.css" />
+    <style>
+      * {
+        margin:0;
+        padding:0;
+      }
+      html { 
+        height: 100%;
+      }
+      body { 
+        height: 100%;
+      }
+      .map_canvas { 
+        width:400px;
+        height:400px;
+        position:absolute;
+      }
+      .top,.bottom,.middle{
+        overflow:hidden;
+        height:133px;
+        width:400px;
+      }
+      .middle .map_canvas{
+        margin-top:-133px;
+      }
+      .bottom .map_canvas{
+        margin-top:-266px;
+      }
+      #container{
+        position:relative;
+        width:400px;
+        height:400px;
+          -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+         -webkit-transform: rotateY(35deg) rotateX(-35deg);
+        -moz-transform:rotateY(35deg) rotateX(-35deg);
+        transform: rotateY(35deg) rotateX(-35deg);
+          -webkit-transition:all 1s;
+        -moz-transition:all 1s;
+        transition:all 1s;
+      }
+
+      .top{
+        -webkit-transform-origin:bottom;
+        -moz-transform-origin:bottom;
+        transform-origin:bottom;
+        -webkit-transform: rotateX(90deg);
+        -moz-transform:rotateX(90deg);
+        transform: rotateX(90deg);
+        -webkit-transition:all 1s;
+        -moz-transition:all 1s;
+        transition:all 1s;
+        border-top:10px solid #ffffff;
+        border-right:10px solid #ffffff;
+        border-left:10px solid #ffffff;
+      }
+
+      .bottom{
+        -webkit-transform-origin:top;
+        -moz-transform-origin:top;
+        transform-origin:top;
+        -webkit-transform: rotateX(90deg);
+        -moz-transform:rotateX(90deg);
+        transform: rotateX(90deg);
+        -webkit-transition:all 1s;
+        -moz-transition:all 1s;
+        transition:all 1s;
+          border-bottom:10px solid #ffffff;
+        border-right:10px solid #ffffff;
+        border-left:10px solid #ffffff;
+      }
+
+      .middle{
+        -webkit-transform-origin:top;
+        -moz-transform-origin:top;
+        transform-origin:top;
+        -webkit-transform: rotateX(0deg);
+        -moz-transform:rotateX(0deg);
+        transform: rotateX(0deg);
+        -webkit-transition:all 1s;
+        -moz-transition:all 1s;
+        transition:all 1s;
+        border-right:10px solid #ffffff;
+        border-left:10px solid #ffffff;
+      }
+
+      #unfold{
+        width:400px;
+        height:400px;
+        position:absolute;
+        left:50%;
+        top:50%;
+        margin-left:-200px;
+        margin-top:-200px;
+      }
+
+      #unfold:hover .top,#unfold:hover .middle,#unfold:hover .bottom{
+        -webkit-transform: rotateX(0deg);
+        -moz-transform:rotateX(0deg);
+        transform: rotateX(0deg);
+      }
+
+      #unfold:hover #container{
+        -webkit-transform: rotateY(0deg) rotateX(0deg);
+        -moz-transform:rotateY(0deg) rotateX(0deg);
+        transform: rotateY(0deg) rotateX(0deg);
+      }
+
+      #unfold::before{
+        position:absolute;
+        z-index:1;
+        font:3em Arial,sans-serif;
+        left:-88%;
+        top:40%;
+      }
+
+      #unfold::after{
+        position:absolute;
+        z-index:1;
+        font:1.5em Arial,sans-serif;
+        left:110%;
+        width:250px;
+        top:40%;
+      }
+
+      #unfold:hover::before,#unfold:hover::after{
+        visibility:hidden;
+        display:none;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div id="unfold">
+      <div id="container">
+        <div class="top">
+          <div class="map_canvas"></div>
+        </div>
+        <div class="middle">
+          <div class="map_canvas"></div>
+        </div>
+        <div class="bottom">
+          <div class="map_canvas"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+<script src="http://cdn.leafletjs.com/leaflet-0.7.5/leaflet.js"></script>
+<script>
+    /*Weirdness, the map doesn't appeared in full view*/
+
+  function initialize() {
+    var mapOptions = {
+      center: {
+        lat: 39.7392, 
+        lng: -104.9903
+      },
+      zoom: 10
+    };
+
+    var containers = document.getElementsByClassName('map_canvas'),
+      map1 = L.map(containers[0],mapOptions),
+      map2 = L.map(containers[1],mapOptions),
+      map3 = L.map(containers[2],mapOptions);
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoia2F0cmluYSIsImEiOiJoYkswcE1rIn0.h-ovShDXatAjFOVZZ7s9RA', {
+        attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a>, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+        maxZoom: 18,
+        id: 'mapbox.run-bike-hike',
+    }).addTo(map1);
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoia2F0cmluYSIsImEiOiJoYkswcE1rIn0.h-ovShDXatAjFOVZZ7s9RA', {
+        attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a>, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+        maxZoom: 18,
+        id: 'mapbox.run-bike-hike',
+    }).addTo(map2);
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1Ijoia2F0cmluYSIsImEiOiJoYkswcE1rIn0.h-ovShDXatAjFOVZZ7s9RA', {
+        attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a>, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+        maxZoom: 18,
+        id: 'mapbox.run-bike-hike',
+    }).addTo(map3);
+  }
+  var myMap = initialize(),
+    unfold = document.getElementById("unfold");
+
+  unfold.onmousedown=function(e){
+    if (e.which == 1 && myMap[0].getZoom() + 1 <= 20){
+      for(var i in myMap){
+        myMap[i].setZoom(myMap[i].getZoom() + 1);
+      }
+    }
+    else if(e.which==3 && myMap[0].getZoom() - 1 > 1){
+     for(var i in myMap){
+        myMap[i].setZoom(myMap[i].getZoom() - 1);
+      }
+    }
+    return false;
+ };
+</script>
+</html>
