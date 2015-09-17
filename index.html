@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="author" content="Katrina Engelsted, Mamata Akella">
+    <meta name="description" content="An introduction to web mapping for Denver Start up Week">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
+    <link href="assets/css/reveal.min.css" rel="stylesheet">
+    <link href="assets/css/theme/green.css" id="theme" rel="stylesheet">
+    <link href="assets/lib/css/zenburn.css" rel="stylesheet">
+    <script>
+      if (window.location.search.match(/print-pdf/gi)) {
+        var link = document.createElement('link');
+        link.href = 'css/print/pdf.css';
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+      }
+    </script>
+    <!--[if lt IE 9]>
+    <script src="lib/js/html5shiv.js"></script>
+    <![endif]-->
+    <title>Mappy Hour: A dive into mapping tools & libraries</title>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+         <img src="img/first.png"/>
+        </section>
+        <section>
+          <h2 class="highlight">Your presenters</h2>
+          <div class="pull-left">
+            <img src="img/katrina.png"/>
+            <p><a href="http://twitter.com/katrography">@katrography</a></p>
+            <p><a href="http://www.fulcrumapp.com">http://www.fulcrumapp.com/</a></p>
+          </div>
+          <div class="pull-right">
+            <img src="img/mamata.png"/>
+            <p><a href="twitter.com/mamataakella">@mamataakella</a></p>
+            <p><a href="http://www.fulcrumapp.com/">https://cartodb.com/</a></p>
+          </div>
+        </section>
+        <section>
+          <iframe src="iframes/road.html" style="margin:0;padding:0;width: 100%;height:200px"></iframe>
+          <ul>
+            <li>Overview of Web Maps</li>
+            <li>Map Companies & Tools</li>
+            <li>Creating a map: <span style="font-size:40px">Fulcrum & CartoDB style</span></li>
+          <ul>
+        </section>
+          <section>
+          <section>
+            <h2 class ="highlight">Web Maps</h2>
+            <h3><i>n.</i><span class="emphasis">Vector tiles</span>, or data that is encoded into tiles (images) that can be rendered dynamically</h3>
+          </section>
+          <section>
+            <iframe src="//giphy.com/embed/6J9EYB2Z27Qg8" width="680" height="470" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a class="attribution" href="http://giphy.com/gifs/shocked-george-clooney-6J9EYB2Z27Qg8">Giphy</a></p>
+          </section>
+          <section>
+            <span class="emphasis">Digital mapping</span> (aka digital cartography) is the process by which a collection of data is compiled and formatted into a virtual image.
+          </section>
+          <section>
+            Paper maps provide basic landscapes similar to digitized road maps, yet are often cumbersome, cover only a designated area, and lack many specific details such as road blocks. In addition, there is no way to “update” a paper map except to obtain a new version. On the other hand, digital maps, in many cases, can be updated through synchronization with updates from company servers.
+          </section>
+          <section>
+            How is a <em>web map</em> different than a <em>digital map</em>?
+          </section>
+          <section>
+            <em>Digital</em>: involves a computer, but might not be accessible by the internet.
+          </section>
+          <section>
+            A <em>web map</em> is a kind of <em>digital map</em>. And both are obviously quite different from <em>analog</em> maps, such as paper maps and atlases!
+          </section>
+          <section>
+            We're talking about web maps that you view in a browser, like...
+          </section>
+          <section>
+            <img src="http://maptime.io/anatomy-of-a-web-map/images/osm.png"><a href="http://www.openstreetmap.org/">OpenStreetMap.org</a>
+          </section>
+          <section>
+            <img src="http://maptime.io/anatomy-of-a-web-map/images/google-map.png"><a href="https://www.google.com/maps/preview">maps.google.com</a>
+          </section>
+          <section>
+            <img src="img/bike-parts.svg">
+            <h2>Let's break it down...</h2>
+          </section>
+          <section>
+            Instead of components, maps have <em>data.</em>
+            <!--  postGIS  -->
+          </section>
+          <section>
+            Instead of pedals and wheels, web maps have <em>styles and tiles and servers.</em>
+          </section>
+            <!-- http://blogs.esri.com/esri/arcgis/2015/07/20/vector-tiles-preview/ -->   
+          <section>
+            <h2>Maps are <span class="highlight">Tiles</span></h2>
+            <iframe src="iframes/unfold.html" style="height:600px"></iframe>
+            <a class="attribution" href="http://codepen.io/jgx/pen/IbJev">http://codepen.io/jgx/pen/IbJev</a>
+          </section>
+          <section>
+            <h2 class="highlight">Map Tiles</h2>
+            <h3>Pre-rendered images (tiles) that fit seamlessly together in geographic space in order to make maps load quickly.</h3>
+          </section>
+             <!-- If you've ever been on a slower internet connection, you can actually see the tiles loading in the map -->
+          <section>
+            <h3>Map tiles are 256x256 pixels and organized based on coordinates (x,y) and zoom levels (z).</h3>
+          </section>
+          <!-- These tiles are projected in web mercator -->
+          <section>
+            <h2 class="highlight">Web Mercator</h2>
+            <h3>The tiling scheme used by most web maps.</h3>
+          </section>
+          <section>
+            <img src="img/web-mercator.png">
+          </section>  
+          <section>
+            <h2 class="highlight">Zoom Level</h2>
+            <h3>Defines the scale of the current map view. Ranges from 0 (entire world) to 21 (individual building level).</h3>
+          </section>
+          <section>
+            <img src="img/zoom-levels.png">
+          </section>
+           <section>
+            <img src="img/tiles.png">
+          </section>
+          <!-- Insert screenshot of zoom slider with zoom levels and associated scales -->
+          <section>
+            <h2>Map tiles and Web Mercator are still the <span class ="highlight">de facto</span> web mapping standard</h2>
+          </section>
+          <section>
+            <img src="img/tile-url.png">
+          </section>
+          <section>
+            <h2>That covers the "Map" portion of our web map, right?</h2>
+            <p class="highlight">Not yet.</p>
+          </section>
+          <section>
+            <h2>Basemap vs. Overlay</h2>
+            <img src="img/data-layers.png"/><a class="attribution" href="https://www.mapbox.com/mapbox-studio/#darwin">Mapbox</a>
+          </section>
+          <section>
+            <img src="img/basemap-overlay.png">
+          </section>
+          <section>
+            <h2 class="highlight">Basemap</h2>
+            <h3>A map that provides geographic context to help support a wide variety of overlays - typically raster tiles.</h3>
+          </section>
+          <!-- Images -->
+          <section>
+            <h2 class="highlight">Overlays</h2>
+            <h3>Themes of information overlaid on a basemap that help tell a story - typically vector.</h3>
+          </section>
+          <section>
+            <h3>More about the "Map"... we now have vector tiles</h3>
+          </section>
+          <section>
+            <!-- good resources here: https://www.mapbox.com/developers/vector-tiles/ -->
+            <h2 class="highlight">Vector Tiles</h2>
+            <h3>Similar to image tiles in terms of z/x/y but instead of images being served in each tile, data are.</h3>
+          </section>
+          <section>
+            <img src="img/vector-tiles-2.png">
+          </section>
+          <section>
+            <img src="img/vector-tiles-1.png">
+          </section>
+          <section>
+            <img src="img/interface.png">
+          </section>
+          <section>
+            <h2 class="highlight">User Interface</h2>
+            <h3>The "container" surrounding the map - built using HTML.</h3>
+          </section>
+          <!-- Done with HTML -->
+          <!-- Screenshot showing what a user interface on a map is and its function (in the context of NPS black bar, legend information, tabbed descriptions, search capabilities, etc.) -->
+          <section>
+            <img src="img/map-interaction.png">
+          </section>
+          <section>
+            <h2 class="highlight">Map Functionality</h2>
+            <h3>Tools used to interact with the map and the overlaid content- added using JavaScript.</h3>
+          </section>
+          <section>
+            <iframe src="http://mappingkat.github.io/indian-removal/"></iframe>
+          </section>
+        </section>
+        <section>
+          <section>
+            <h2>Who came up with this?</h2>
+            <p>Let's travel back to 1997...</p>
+            <iframe src="//giphy.com/embed/Wxo7Mjk1Vksdq" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a class="attribution" href="http://giphy.com/gifs/anniversary-microsoft-windows-95-Wxo7Mjk1Vksdq">GIPHY</a></p>
+          </section>
+          <section>
+            <h4>First, there were digital maps like <a href="http://www.esri.com/software/arcgis">ArcGIS</a><img src="http://maptime.io/anatomy-of-a-web-map/images/3-map-history/1-arcGIS.jpg"></h4>
+          </section>
+          <section>
+            <h2 style="background-color:purple;color:white;margin-top:20px;padding:15px;">ESRI</h2>
+            <img src="img/esri.png">
+          </section>
+          <section>
+            <h2>In <span class="highlight">1996</span>, MapQuest introduced the first popular web map</h2>
+          </section>
+          <section>
+            <h2 style="background-color:purple;color:white;margin-top:20px;padding:15px;">MapQuest</h2>
+            <img src="img/mapquest.png">
+            <p>Started in 1997, bought by AOL for $1.1 bil</p>
+          </section>
+          <section>
+            <h2>It was like a <span class="emphasis">road map</span> and <span class="emphasis">yellow pages</span> combined. Its primary purpose was to find places and get directions.</h2>
+          </section>
+          <section>
+            <h2 style="background-color:purple;color:white;margin-top:20px;padding:15px;">Yahoo</h2>
+            <img src="img/yahoo.jpg">
+          </section>
+          <section>
+            <h2>In <span class="highlight">2005</span>, Google released their version of the web map</h2>
+          </section>
+          <section>
+            <!-- In 2005, Google introduced slippy maps,  -->
+            <h2 style="background-color:purple;color:white;margin-top:20px;padding:15px;">Google</h2>
+            <img src="img/google.png">
+          </section>
+          <section>
+            <h2>Google Maps became more popular than MapQuest because the maps were <span class="highlight">faster</span></h2>
+          </section>
+          <!-- We should mention here that MapQuest also used tiles but their tiling scheme was not as efficient as Google's and with every pan and zoom on the map, the page had to be refreshed -->
+          <section>
+            <h2>The maps were faster because of Google's use of <span class ="highlight">map tiles</span></h2>
+          </section>
+          <section>
+            <h2>And Google also made its technologies available to developers through an <span class="highlight">API</span></h2>
+          </section>
+          <section data-background="img/first-mashup.jpg">
+          </section>
+          <section>
+            Open Source libraries and tools emerged... OSM, QGIS
+          </section>
+          <section>
+
+          </section>
+          <section>
+          </section>
+          <section>
+          </section>
+          <section>
+          </section>
+          <section>
+          </section>
+          <section>
+          </section>
+          <section>
+          </section>
+          <section>
+          </section>
+        </section>
+        <section>
+          <section>
+            Designers --> Cartographers
+            CSS --> cartoCSS
+            JSON --> geoJSON
+          </section>
+        <!-- History and Anatomy of maps- how progressed and what maps are doing for creating changes -->
+
+       
+        
+        <section>
+          <iframe src="http://fulcrumapp.github.io/fulcrum-styler/?id=a5c8e07368efde43#"></iframe>
+        </section>
+        <section>
+          <iframe src="iframes/ride.html"></iframe>
+          <a class="attribution" href="http://codepen.io/mandymichael/pen/LEpywo">http://codepen.io/mandymichael/pen/LEpywo</a>
+        </section>
+        
+
+        <section>
+          <h2>The journey is just beginning...</h2>
+          <iframe src="iframes/roadmap.html"></iframe>
+        </section>
+          
+    
+    </div>
+    <script src="assets/js/head.min.js"></script>
+    <script src="assets/js/reveal.js"></script>
+    <script>
+      Reveal.initialize({
+        center: false,
+        controls: true,
+        height: 700,
+        history: true,
+        overview: false,
+        progress: true,
+        theme: Reveal.getQueryHash().theme || 'green',
+        transition: Reveal.getQueryHash().transition || 'linear',
+        width: 1100
+      });
+    </script>
+    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','------','mappingkat.github.io');ga('send','pageview');</script>
+  </body>
+</html>
