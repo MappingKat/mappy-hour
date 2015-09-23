@@ -5,6 +5,36 @@ body {
   background: #037782;
   background-color: #037782;
 }
+.red {
+  color: #FFBFBF;
+}
+.orange {
+  color: #F9E3BA;
+}
+.yellow {
+  color: #F9F9CE;
+}
+.blue {
+  color: #B0D0FF;
+}
+.pink {
+  color: #FFA8FF;
+}
+.purple {
+  color: #FFD2DA;
+}
+pre{
+  pre {
+  width: 500px;                          /* specify width  */
+  white-space: pre-wrap;                 /* CSS3 browsers  */
+  white-space: -moz-pre-wrap !important; /* 1999+ Mozilla  */
+  white-space: -pre-wrap;                /* Opera 4 thru 6 */
+  white-space: -o-pre-wrap;              /* Opera 7 and up */
+  word-wrap: break-word;                 /* IE 5.5+ and up */
+  /* overflow-x: auto; */                /* Firefox 2 only */
+  /* width: 99%; */          /* only if needed */
+  }
+}
 .reveal {
   font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-size: 50px;

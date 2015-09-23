@@ -46,23 +46,22 @@
           </div>
         </section>
         <section>
-          <iframe src="iframes/road.html" style="margin:0;padding:0;width: 100%;height:200px"></iframe>
+          <iframe src="iframes/road.html" style="margin:0;padding:0;width: 100%;height:100px"></iframe>
           <ul>
-            <li>History & Overview of Web Maps</li>
-            <li><span style="margin-top:100px">Creating a map:
-              <div class="pull-right">
-                <img style="width:500px;height:auto;" src="img/fulcrum-carto.jpg">
-              </div>
+            <li>Introdution to Web maps</li>
+            <li>Components of a web map</li>
+            <li>
+              <img style="width:500px;height:auto;" src="img/fulcrum-carto.png">
             </li>
           <ul>
         </section>
         <section>
           <section>
-            <h2>How is a <em>web map</em> different than a <em>digital map</em>?</h2>
+            <h2>How is a  <span class="emphasis">web map</span> different than a <em>digital map</em>?</h2>
           </section>
           <!-- >Digital mapping</span> (aka digital cartography) is the process by which a collection of data is compiled and formatted into a virtual image. -->
           <section>
-            <h2><em>Digital</em> involves a computer, but might not be accessible by the internet.</h2>
+            <h2><span class="emphasis">Digital</span> involves a computer, but might not be accessible by the internet.</h2>
           </section>
           <section>
             <p>Let's travel back to 1980s...</p>
@@ -105,23 +104,26 @@
           <section>
             <h2>The maps were faster because of Google's use of <span class ="highlight">map tiles</span></h2>
           </section>
+          <section data-background="img/first-mashup.jpg">
+          </section>
           <section>
             <h2>And Google also made its technologies available to developers through an <span class="highlight">API</span></h2>
-          </section>
-          <section data-background="img/first-mashup.jpg">
           </section>
           <section>
             <img src="img/google-preview.png">maps.google.com</a>
           </section>
           <section tagcloud="" class="present tagcloud" style="display: block;">
             Meanwhile, other companies and open source libraries and tools began to emerge...
-            <span class="clouditem" style="font-size: 156.10265141818672%; color: rgb(150, 76, 179);">    Leaflet</span> <span class="clouditem" style="font-size: 183.60962371807545%; color: rgb(179, 93, 76);">    CartoDB</span> <span class="clouditem" style="font-size: 163.66907241288573%; color: rgb(76, 97, 179);">    Mapbox</span> <span class="clouditem" style="font-size: 198.66739843040705%; color: rgb(76, 145, 179);">    GitHub</span> <span class="clouditem" style="font-size: 198.30495120491832%; color: rgb(179, 90, 76);">    KML</span> <span class="clouditem" style="font-size: 193.73538852203637%; color: rgb(143, 76, 179);">    GeoJSON</span> <span class="clouditem" style="font-size: 149.88388252444565%; color: rgb(107, 179, 76);">    CSV</span> <span class="clouditem" style="font-size: 186.96960015688092%; color: rgb(76, 179, 167);">    WMS</span> <span class="clouditem" style="font-size: 195.18062303308398%; color: rgb(76, 179, 160);">    Tiled</span> </span> <span class="clouditem" style="font-size: 155.7243404071778%; color: rgb(76, 179, 134);">    OpenStreetMap</span> <span class="clouditem" style="font-size: 176.9069387484342%; color: rgb(179, 76, 114);">    Vector Tiles</span> <span class="clouditem" style="font-size: 165.42575665283948%; color: rgb(163, 76, 179);">    UTFGrid</span> <span class="clouditem" style="font-size: 148.2439872669056%; color: rgb(76, 179, 78);">    JavaScript</span> <span class="clouditem" style="font-size: 184.3598467297852%; color: rgb(76, 179, 117);">    HTML</span> <span class="clouditem" style="font-size: 157.32739641796798%; color: rgb(138, 76, 179);">    CSS</span> <span class="clouditem" style="font-size: 177.55439032334834%; color: rgb(165, 76, 179);">    Node.js</span> <span class="clouditem" style="font-size: 149.08941294066608%; color: rgb(157, 179, 76);">    Grunt</span> <span class="clouditem" style="font-size: 167.53705204464495%; color: rgb(76, 134, 179);">    MapQuest</span></span> <span class="clouditem" style="font-size: 193.0041212681681%; color: rgb(126, 179, 76);">    ExtJS</span> <span class="clouditem" style="font-size: 161.27999428194016%; color: rgb(174, 179, 76);">    PostgreSQL</span> <span class="clouditem" style="font-size: 187.0986875705421%; color: rgb(76, 102, 179);">    PostGIS</span> <span class="clouditem" style="font-size: 142.29869320522994%; color: rgb(76, 179, 157);">    SQL Server</span> <span class="clouditem" style="font-size: 164.81037794146687%; color: rgb(127, 76, 179);"></span> <span class="clouditem" style="font-size: 161.09244556631893%; color: rgb(76, 179, 109);">    Bootstrap</span> <span class="clouditem" style="font-size: 146.32043632213026%; color: rgb(175, 76, 179);">    TileMill</span> <span class="clouditem" style="font-size: 158.61324864905328%; color: rgb(76, 179, 131);">    QGIS</span> <span class="clouditem" style="font-size: 173.15360988955945%; color: rgb(179, 76, 139);">    Maki</span> <span class="clouditem" style="font-size: 196.9772030506283%; color: rgb(179, 76, 85);">    Heroku</span> <span class="clouditem" style="font-size: 190.83041932433844%; color: rgb(76, 179, 121);">    EC2</span> <span class="clouditem" style="font-size: 193.002316839993%; color: rgb(179, 97, 76);">    S3</span> <span class="clouditem" style="font-size: 152.51278991345316%; color: rgb(179, 76, 163);">    Zoomify</span> <span class="clouditem" style="font-size: 140.31181874219328%; color: rgb(179, 76, 124);">    jQuery</span> <span class="clouditem" style="font-size: 172.5516069913283%; color: rgb(179, 170, 76);">    Jasmine</span> <span class="clouditem" style="font-size: 161.32711669895798%; color: rgb(76, 179, 155);">    GDAL</span>
+            <br><span class="clouditem" style="font-size: 156.10265141818672%; color: rgb(150, 76, 179);">    Leaflet</span> <span class="clouditem" style="font-size: 183.60962371807545%; color: rgb(179, 93, 76);">    CartoDB</span> <span class="clouditem" style="font-size: 163.66907241288573%; color: rgb(76, 97, 179);">    Mapbox</span> <span class="clouditem" style="font-size: 198.66739843040705%; color: rgb(76, 145, 179);">    GitHub</span> <span class="clouditem" style="font-size: 198.30495120491832%; color: rgb(179, 90, 76);">    KML</span> <span class="clouditem" style="font-size: 193.73538852203637%; color: rgb(143, 76, 179);">    GeoJSON</span> <span class="clouditem" style="font-size: 149.88388252444565%; color: rgb(107, 179, 76);">    CSV</span> <span class="clouditem" style="font-size: 186.96960015688092%; color: rgb(76, 179, 167);">    WMS</span> <span class="clouditem" style="font-size: 195.18062303308398%; color: rgb(76, 179, 160);">    Tiled</span> </span> <span class="clouditem" style="font-size: 155.7243404071778%; color: rgb(76, 179, 134);">    OpenStreetMap</span> <span class="clouditem" style="font-size: 176.9069387484342%; color: rgb(179, 76, 114);">    Vector Tiles</span> <span class="clouditem" style="font-size: 165.42575665283948%; color: rgb(163, 76, 179);">    UTFGrid</span> <span class="clouditem" style="font-size: 148.2439872669056%; color: rgb(76, 179, 78);">    JavaScript</span> <span class="clouditem" style="font-size: 184.3598467297852%; color: rgb(76, 179, 117);">    HTML</span> <span class="clouditem" style="font-size: 157.32739641796798%; color: rgb(138, 76, 179);">    CSS</span> <span class="clouditem" style="font-size: 177.55439032334834%; color: rgb(165, 76, 179);">    Node.js</span> <span class="clouditem" style="font-size: 149.08941294066608%; color: rgb(157, 179, 76);">    Grunt</span> <span class="clouditem" style="font-size: 167.53705204464495%; color: rgb(76, 134, 179);">    MapQuest</span></span> <span class="clouditem" style="font-size: 193.0041212681681%; color: rgb(126, 179, 76);">    ExtJS</span> <span class="clouditem" style="font-size: 161.27999428194016%; color: rgb(174, 179, 76);">    PostgreSQL</span> <span class="clouditem" style="font-size: 187.0986875705421%; color: rgb(76, 102, 179);">    PostGIS</span> <span class="clouditem" style="font-size: 142.29869320522994%; color: rgb(76, 179, 157);">    SQL Server</span> <span class="clouditem" style="font-size: 164.81037794146687%; color: rgb(127, 76, 179);"></span> <span class="clouditem" style="font-size: 161.09244556631893%; color: rgb(76, 179, 109);">    Bootstrap</span> <span class="clouditem" style="font-size: 146.32043632213026%; color: rgb(175, 76, 179);">    TileMill</span> <span class="clouditem" style="font-size: 158.61324864905328%; color: rgb(76, 179, 131);">    QGIS</span> <span class="clouditem" style="font-size: 173.15360988955945%; color: rgb(179, 76, 139);">    Maki</span> <span class="clouditem" style="font-size: 196.9772030506283%; color: rgb(179, 76, 85);">    Heroku</span> <span class="clouditem" style="font-size: 190.83041932433844%; color: rgb(76, 179, 121);">    EC2</span> <span class="clouditem" style="font-size: 193.002316839993%; color: rgb(179, 97, 76);">    S3</span> <span class="clouditem" style="font-size: 152.51278991345316%; color: rgb(179, 76, 163);">    Zoomify</span> <span class="clouditem" style="font-size: 140.31181874219328%; color: rgb(179, 76, 124);">    jQuery</span> <span class="clouditem" style="font-size: 172.5516069913283%; color: rgb(179, 170, 76);">    Jasmine</span> <span class="clouditem" style="font-size: 161.32711669895798%; color: rgb(76, 179, 155);">    GDAL</span>
           </section>
           <section>
-            <img src="img/osm-preview">OpenStreetMap.org</a>
+            <img src="img/osm-preview.png">OpenStreetMap.org</a>
           </section>
           <section>
-            <h2>A <em>web map</em> is a kind of <em>digital map</em>. Web maps are connected to the information represented on the map</h2>
+            <h2>A <span class="emphasis">web map</span> is a kind of <em>digital map</em>. Web maps are connected to the information represented on the map</h2>
+          </section>
+          <section>
+            <a href="http://phindee.com/">Happy Hour in Portland</a>
           </section>
           <!--   Paper maps provide basic landscapes similar to digitized road maps, yet are often cumbersome, cover only a designated area, and lack many specific details such as road blocks. In addition, there is no way to “update” a paper map except to obtain a new version. On the other hand, digital maps, in many cases, can be updated through synchronization with updates from company servers. -->
         </section>
@@ -132,39 +134,20 @@
           <!-- Given that, we still ask a lot of the same questions -->
           <section>
             <h2>We still ask some of the same questions:</h2>
-            <ul>
-              <li>What size will the map be?</li>
-              <li>What geographic extent will the map be?</li>
-              <li>What will the map scale be?</li>
-              <li>What will the map projection be?</li>
+            <ul style="font-size:36px">
+              <li class="red">What size will the map be?</li>
+              <li class="orange">What geographic extent will the map be?</li>
+              <li class="yellow">What will the map scale be?</li>
+              <li class="green">What will the map projection be?</li>
             </ul>
           </section>
           <section>
             <h2>And some additional ones:</h2>
-            <ul>
-              <li>Will other information be placed on top of the map?</li>
-              <li>Will the map be viewed on multiple devices?</li>
-              <li>Will the map be queried for additional information?</li>
+            <ul style="font-size:36px">
+              <li class="blue">Will other information be placed on top of the map?</li>
+              <li class="purple">Will the map be viewed on multiple devices?</li>
+              <li class="pink">Will the map be queried for additional information?</li>
             </ul>
-          </section>
-          <section>
-            <iframe src="//giphy.com/embed/6J9EYB2Z27Qg8" width="680" height="470" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a class="attribution" href="http://giphy.com/gifs/shocked-george-clooney-6J9EYB2Z27Qg8">Giphy</a></p>
-          </section>
-          <section>
-            <img src="img/bike-parts.svg">
-            <h2>Let's break it down...</h2>
-          </section>
-          <section>
-            Instead of components, maps have <em>data.</em>
-            <!--  postGIS  -->
-          </section>
-          <section>
-            Instead of pedals and wheels, web maps have <span class="emphasis">databases</span> and <span class="emphasis">servers</span>.
-          </section>
-            <!-- http://blogs.esri.com/esri/arcgis/2015/07/20/vector-tiles-preview/ -->   
-          <section>
-            <iframe src="iframes/ride.html"></iframe>
-            <a class="attribution" href="http://codepen.io/mandymichael/pen/LEpywo">http://codepen.io/mandymichael/pen/LEpywo</a>
           </section>
           <section>
             <h2>Maps are <span class="highlight">Tiles</span></h2>
@@ -178,24 +161,21 @@
              <!-- If you've ever been on a slower internet connection, you can actually see the tiles loading in the map -->
           <section>
             <h3>Map tiles are 256x256 pixels and organized based on coordinates (x,y) and zoom levels (z).</h3>
+            <img src="img/tiles.png">
           </section>
           <!-- These tiles are projected in web mercator -->
           <section>
             <h2 class="highlight">Web Mercator</h2>
             <h3>The tiling scheme used by most web maps.</h3>
-          </section>
-          <section>
             <img src="img/web-mercator.png">
-          </section>  
+          </section>
           <section>
             <h2 class="highlight">Zoom Level</h2>
             <h3>Defines the scale of the current map view. Ranges from 0 (entire world) to 21 (individual building level).</h3>
-          </section>
-          <section>
             <img src="img/zoom-levels.png">
           </section>
-           <section>
-            <img src="img/tiles.png">
+          <section>
+            <iframe src="http://bl.ocks.org/anonymous/raw/2def3176d6a3cdea278a/" style="height:590px;width:707px;"></iframe>
           </section>
           <!-- Insert screenshot of zoom slider with zoom levels and associated scales -->
           <section>
@@ -205,8 +185,60 @@
             <img src="img/tile-url.png">
           </section>
           <section>
-            <h2>That covers the "Map" portion of our web map, right?</h2>
-            <p class="highlight">Not yet.</p>
+            <img src="img/bike-parts.svg">
+            <h2>Let's break it down...</h2>
+            Tiles are a little bit like bikes... they have different compenents that fit together to make the maps.
+          </section>
+          <section style="padding:0;height:500px">
+            <p>Instead of little parts and components, maps have <em>data.</em><p>
+            <img class="pull-left" style="margin:20px" src="img/bike-parts.png">
+            <pre class="pull-left" style="width:800px;height:500px;">
+              <code style="height:500px;">
+            {
+            "type": "FeatureCollection",
+            "features": [
+              {
+                "type": "Feature",
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -104.987825,
+                    39.7414659
+                  ]
+                },
+                "properties": {
+                  "name": "Modworks Coworking",
+                  "address": "110 16th St #1300, Denver, CO 80202",
+                  "site": "http://www.modworks.com/"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -104.986191,
+                    39.7589209
+                  ]
+                },
+                "properties": {
+                  "name": "Green Spaces",
+                  "address": "1368 26th St, Denver, CO 80205",
+                  "site": "http://www.greenspaces.com/"
+                }
+              }
+            }
+            </code></pre>
+          </section>
+          <section>
+            Just like different types of bikes, you have different types of data and styles.
+          </section>
+          <section style="height:auto">
+            Instead of pedals and wheels, web maps have <span class="orange">databases</span> and <span class="orange">servers</span>.<br>
+            <span class="clouditem" style="font-size: 156.10265141818672%; color: rgb(150, 76, 179);">    PostGIS</span> <span class="clouditem" style="font-size: 183.60962371807545%; color: rgb(179, 93, 76);">    Redis</span> <span class="clouditem" style="font-size: 163.66907241288573%; color: rgb(76, 97, 179);">    PostgreSQL</span> <span class="clouditem" style="font-size: 198.66739843040705%; color: rgb(76, 145, 179);">    GIS Dependencies</span> <span class="clouditem" style="font-size: 198.30495120491832%; color: rgb(179, 90, 76);">    NodeJS</span> <span class="clouditem" style="font-size: 193.73538852203637%; color: rgb(143, 76, 179);">    Ubuntu</span><br>
+            <iframe src="iframes/ride.html"></iframe>
+            <a class="attribution" href="http://codepen.io/mandymichael/pen/LEpywo">http://codepen.io/mandymichael/pen/LEpywo</a>
+            <!-- http://blogs.esri.com/esri/arcgis/2015/07/20/vector-tiles-preview/ -->  
           </section>
           <section>
             <h2>Basemap vs. Overlay</h2>
@@ -272,34 +304,15 @@
         </section>
         <section>
           <section>
-            How do I even do this?
+            How do I start to build a map?
+            <iframe src="//giphy.com/embed/6J9EYB2Z27Qg8" width="680" height="470" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a class="attribution" href="http://giphy.com/gifs/shocked-george-clooney-6J9EYB2Z27Qg8">Giphy</a></p>
           </section>
           <section>
-            You can use <a href="http://wiki.openstreetmap.org/wiki/Tiles">OpenStreetMap</a>, <a href="http://cloudmade.com/products/map-tiles">CloudMade</a>, <a href="http://maps.stamen.com">Stamen</a>, <a href="https://www.mapbox.com/tour/#maps">MapBox</a>, <a href="http://developer.mapquest.com/web/products/open/map">MapQuest</a>
+            <img></img> 
+            for directions
           </section>
+            <img src="img/fulcrum-carto.png">
           <section>
-            Mapbox studio to design tiles
-            <img src="http://maptime.io/anatomy-of-a-web-map/images/worldwide-wood.png"> 
-            <em>Pretty!</em>
-          </section>
-          <section>
-            New Mapquest
-          </section>
-          <section>
-            Style your map with <a href="https://www.mapbox.com/carto">CartoCSS</a> (or just carto)
-          </section>
-          <section>
-            <h2>You can host these files on <a href="https://www.mapbox.com/plans/">MapBox</a>, or...
-            Serve the tiles by running your own tile server. 
-            For example: <a href="https://github.com/klokantech/tileserver-php/">TileServer.php</a> / <a href="http://tilestache.org">TileStache</a> / <a href="http://tilecache.org">TileCache</a> / <a href="https://github.com/mapbox/tilestream">TileStream</a> / <a href="https://github.com/chelm/mbtiles-server">mbtiles-server</a> / <a href="http://wiki.openstreetmap.org/wiki/Mod_tile">mod_tile</a></h2>
-          </section>
-          <section>
-            <h2>See Eric Theise's <a href="http://erictheise.com/maptime_platform_slides">Geo Platform tutorial</a> for all the gritty details</h2>
-          </section>
-          <section>
-            <h2>Do I need a content layer?</h2>
-            --> No? Put all your data into the tiles, possibly using UTFGrid for interactivity
-            ---> Yes? Collect it with Fulcrum
           </section>
           <!--  fulcrum  -->
           <!-- if have no data... behind in the data game?  -->
@@ -307,14 +320,14 @@
             <img src="img/fulcrum.png">
           </section>
           <section>
-            <img src="img/fulcrum-shop.png">
+            <img src="img/fulcrum-shop.jpg">
           </section>
           <section>
             <img src="img/fulcrum-webhooks.png">
           </section>
         <section>
           <section>
-            Finally, <a href="http://cartodb.com">CartoDB</a> takes care of almost all of this for you!
+             <a href="http://cartodb.com">CartoDB</a> takes care of almost all of this for you!
           </section>
         </section>
         <section>
