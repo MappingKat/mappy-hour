@@ -23,9 +23,14 @@ body {
 .purple {
   color: #FFD2DA;
 }
+.image-center{
+  display: inline-block;
+  margin-left:auto;
+  margin-right: auto;
+}
 pre{
   pre {
-  width: 500px;                          /* specify width  */
+  width: 800px;                          /* specify width  */
   white-space: pre-wrap;                 /* CSS3 browsers  */
   white-space: -moz-pre-wrap !important; /* 1999+ Mozilla  */
   white-space: -pre-wrap;                /* Opera 4 thru 6 */
