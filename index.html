@@ -10,16 +10,16 @@
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
     <link href="assets/css/reveal.min.css" rel="stylesheet">
-    <link href="assets/css/theme/green.css" id="theme" rel="stylesheet">
+    <link href="assets/css/theme/green.min.css" id="theme" rel="stylesheet">
     <link href="assets/lib/css/zenburn.css" rel="stylesheet">
-    <script>
-      if (window.location.search.match(/print-pdf/gi)) {
-        var link = document.createElement('link');
-        link.href = 'css/print/pdf.css';
-        link.rel = 'stylesheet';
-        link.type = 'text/css';
-        document.getElementsByTagName('head')[0].appendChild(link);
-      }
+    // <script>
+    //   if (window.location.search.match(/print-pdf/gi)) {
+    //     var link = document.createElement('link');
+    //     link.href = 'css/print/pdf.css';
+    //     link.rel = 'stylesheet';
+    //     link.type = 'text/css';
+    //     document.getElementsByTagName('head')[0].appendChild(link);
+    //   }
     </script>
     <!--[if lt IE 9]>
     <script src="lib/js/html5shiv.js"></script>
@@ -186,7 +186,8 @@
           <img src="img/pinterest.png">Pinterest.com
         </section>
         <section>
-          <iframe src="http://www.nps.gov/npmap/tools/park-tiles/"></iframe>Park Tiles
+          <iframe src="http://www.nps.gov/maps/embed.html?mapId=f93c526b-029d-4b5e-b9f5-0cfcc9eb8d5d"></iframe>
+          <!-- <iframe src="http://www.nps.gov/npmap/tools/park-tiles/"></iframe>Park Tiles -->
         </section>
         <section>
           <img src="img/map-interaction.png">
@@ -252,7 +253,7 @@
           <img src="img/map-interface.png">
         </section>
         <section>
-          <h2>Leaflet:</h2>
+          <h2 class="highlight">Leaflet</h2>
             <h3>A modern open-source JavaScript library for mobile-friendly, interactive web maps.</h3>
           <pre><code>var map = L.map('map', { center: [12.99766, -84.90838], zoom: 5 });
           </code></pre>
