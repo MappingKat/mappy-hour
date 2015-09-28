@@ -99,8 +99,7 @@ pre{
  * IMAGES
  *********************************************/
 .reveal section img {
-  height: 450px;
-  width:auto;
+  height: 500px;
   margin: 15px 0px;
   -webkit-transition: all .2s linear;
   -moz-transition: all .2s linear;

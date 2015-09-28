@@ -54,10 +54,10 @@
             </li>
           <ul>
         </section>
-        <section>
+        <!-- <section>
           <h2>What are <span class="yellow">web maps</span>?
             <iframe src="//giphy.com/embed/6J9EYB2Z27Qg8" width="680" height="470" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a class="attribution" href="http://giphy.com/gifs/shocked-george-clooney-6J9EYB2Z27Qg8">Giphy</a></p>
-        </section>
+        </section> -->
         <section>
           <h4>Great map, but...</h4>
           <img src="img/beer-map.jpg">
@@ -72,9 +72,9 @@
         <section>
           <h2>Web maps have these common elements:</h2>
           <ul>
-            <li>A map</li> <!-- The actual map -->
-            <li>Functionality to interact with the map</li> <!-- Map controls and behaviors: zoom, pan, search, query, etc. -->
-            <li>A user interface</li> <!-- The container that holds the map -->
+            <li class="red">A map</li> <!-- The actual map -->
+            <li class="orange">Functionality to interact with the map</li> <!-- Map controls and behaviors: zoom, pan, search, query, etc. -->
+            <li class="yellow">A user interface</li> <!-- The container that holds the map -->
           </ul>
         </section>
         <section>
@@ -82,9 +82,9 @@
           <img src="img/happy-hour.png">
         </section>
         <section>
-          <h2>So, <span class="highlight">who</span> was involved in this evolution?</h2>
+          <h2><span class="highlight">Who</span> was involved in creating web maps?</h2>
           <p>Let's travel back to 1990s...</p>
-          <img src="img/1990s.png">
+          <img src="img/1990s.png" style="height:350px">
         </section>
         <section>
           <h2>In <span class="highlight">1996</span>, MapQuest introduced the first popular web map</h2>
@@ -121,10 +121,10 @@
         <section data-background="img/first-mashup.jpg"></section>
         <section>
           <h2>Fast Forward to Today...</h2>
-          <img src="img/today.jpg">
+          <img src="img/today.jpg" style="height:450px">
         </section>
         <section style="margin:0;">
-            <img src="img/companies.png" style="height:800px;overflow:auto;margin:0;padding:0;">
+            <img src="img/companies.png" style="height:800px;">
         </section>
         <section>
           <h3>Open source tools and libraries are gaining popularity</h3>
@@ -163,30 +163,30 @@
           <iframe src="http://bl.ocks.org/anonymous/raw/2def3176d6a3cdea278a/" style="height:590px;width:707px;"></iframe>
         </section>
         <section>
-          <img src="img/tile-url.png">
+          <img src="img/tile-url.png" style="height:450px">
           <p>http://<span class="red">tile.openstreetmap.org</span>/<span class="green">17</span>/<span class="yellow">27306</span>/<span class="yellow">49738</span>.<span class="blue">png</span></p>
           <p><span class="red">tile server</span><span class="green">&nbsp;&nbsp;zoom level</span><span class="yellow">&nbsp;&nbsp;x/y of tile in the grid</span>
           <p class="blue">image format of the tile</p>
         </section>
-        <section>
-          <h3>Basemaps are available from many sources</h3>!!!
-          <ul>
-            <li>Free:OSM, Stamen, Mapbox, CartoDB</li>
-            <li>Paid: ESRI</li>
-            <li>Custom: Mapbox, ESRI</li>
+        <section data-background="img/watercolor.jpg" style="color:#000;">
+          <p style="background:#FFF">Basemaps are available from many sources:</p>
+          <ul style="background:#FFF;padding-left:10px">
+            <li><b>Free:</b> OSM, Stamen, Mapbox, CartoDB</li>
+            <li><b>Paid:</b> Google, Bing, Noki/Here, ESRI</li>
+            <li><b>Custom:</b> Mapbox, ESRI</li>
           </ul>
         </section>
         <section>
-          <img src="img/osm-preview.png">OpenStreetMap.org</a>
+          <img src="img/osm-preview.png">Openstreetmap.org
         </section>
         <section>
-          <img src="img/mapquest-update.png">
+          <img src="img/mapquest-update.png">Mapbox.com
         </section>
         <section>
-          <img src="img/pinterest.png">
+          <img src="img/pinterest.png">Pinterest.com
         </section>
         <section>
-          <iframe src="http://www.nps.gov/npmap/tools/park-tiles/"></iframe>
+          <iframe src="http://www.nps.gov/npmap/tools/park-tiles/"></iframe>Park Tiles
         </section>
         <section>
           <img src="img/map-interaction.png">
@@ -196,10 +196,10 @@
           <h3>Themes of information overlaid on a basemap that help tell a story - typically vector.</h3>
         </section>
         <section>
-          Data + Location + geometry = Geospatial data
+          <h2><span class="yellow">Data</span> + <span class="pink">Location</span> + <span class="orange">geometry</span> = Geospatial data</h2>
         </section>
-        <section>
-          <h2>Variety of data formats for overlays</h2>!!!
+        <section data-background="img/formats.png">
+          <h2 style="color:white;background:orange">There are a variety of data formats for overlays</h2>
         </section>
         <section>
           <h2>GeoJSON</h2>
@@ -246,175 +246,49 @@
         </section>
         <section>
           <h2>JavaScript libraries!</h2>
-        </section>
-        <section>
-          <h2>Leaflet:</h2>
-            <h3>A modern open-source JavaScript library for mobile-friendly, interactive web maps.</h3>
-          <pre><code>
-            var map = L.map('map').setOptions()
-          </code></pre>
-        </section>
-        <section>
-            <h2>Overview</h2>
-            <ul>
-              <li>Has all of the features that most developers need to create web maps</li>
-              <li>Works seamlessly across all major desktop and mobile platforms</li>
-              <li>Designed with performance and usability in mind</li>
-            </ul>
-        </section>
-        <section>
-        <h2>Create a basic Leaflet map</h2>
-        <h3>Create a basic HTML Container</h3>
-        <!-- HTML generated using hilite.me -->
-        <div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #75715e">&lt;!DOCTYPE html&gt;</span>
-<span style="color: #f92672">&lt;html&gt;</span>
-
-  <span style="color: #f92672">&lt;head&gt;</span>
-    <span style="color: #f92672">&lt;title&gt;</span>
-      Leaflet Demo
-    <span style="color: #f92672">&lt;/title&gt;</span>
-  <span style="color: #f92672">&lt;/head&gt;</span>
-
-  <span style="color: #f92672">&lt;body&gt;</span>
-  <span style="color: #f92672">&lt;/body&gt;</span>
-
-<span style="color: #f92672">&lt;/html&gt;</span>
-</pre>
-        </div>
-      </section>
-
-      <section>
-        <h2>Create a basic Leaflet map</h2>
-        <h3>Include the Leaflet library CSS</h3>
-        <!-- HTML generated using hilite.me -->
-        <div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">  <span style="color: #f92672">&lt;head&gt;</span>
-    <span style="color: #f92672">&lt;title&gt;</span>
-      Leaflet Demo
-    <span style="color: #f92672">&lt;/title&gt;</span>
-    <span style="color: #f92672">&lt;link</span> <span style="color: #a6e22e">rel=</span><span style="color: #e6db74">&quot;stylesheet&quot;</span> <span style="color: #a6e22e">href=</span><span style="color: #e6db74">&quot;//cdn.leafletjs.com/leaflet-0.7.3/leaflet.css&quot;</span> <span style="color: #f92672">/&gt;</span>
-  <span style="color: #f92672">&lt;/head&gt;</span>
-</pre>
-        </div>
-      </section>
-
-      <section>
-        <h2>Create a basic Leaflet map</h2>
-        <h3>Include the Leaflet library JavaScript</h3>
-        <!-- HTML generated using hilite.me -->
-        <div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">  <span style="color: #f92672">&lt;body&gt;</span>
-    <span style="color: #f92672">&lt;script</span> <span style="color: #a6e22e">src=</span><span style="color: #e6db74">&quot;//cdn.leafletjs.com/leaflet-0.7.3/leaflet.js&quot;</span><span style="color: #f92672">&gt;&lt;/script&gt;</span>
-  <span style="color: #f92672">&lt;/body&gt;</span>
-</pre>
-        </div>
-      </section>
-
-      <section>
-        <h2>Create a basic Leaflet map</h2>
-        <h3>Create a &quot;div&quot; for the map</h3>
-        <!-- HTML generated using hilite.me -->
-        <div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">  <span style="color: #f92672">&lt;body&gt;</span>
-    <span style="color: #f92672">&lt;div</span> <span style="color: #a6e22e">id=</span><span style="color: #e6db74">&quot;map&quot;</span><span style="color: #f92672">&gt;&lt;/div&gt;</span>
-    <span style="color: #f92672">&lt;script</span> <span style="color: #a6e22e">src=</span><span style="color: #e6db74">&quot;//cdn.leafletjs.com/leaflet-0.7.3/leaflet.js&quot;</span><span style="color: #f92672">&gt;&lt;/script&gt;</span>
-  <span style="color: #f92672">&lt;/body&gt;</span>
-</pre>
-        </div>
-      </section>
-
-      <section>
-        <h2>Create a basic Leaflet map</h2>
-        <h3>Style the &quot;div&quot;</h3>
-        <!-- HTML generated using hilite.me -->
-        <div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">  <span style="color: #f92672">&lt;head&gt;</span>
-    <span style="color: #f92672">&lt;title&gt;</span>
-    Leaflet Demo
-    <span style="color: #f92672">&lt;/title&gt;</span>
-    <span style="color: #f92672">&lt;style&gt;</span>
-      <span style="color: #f92672">body,</span>
-      <span style="color: #f92672">html</span> <span style="color: #f8f8f2">{</span>
-        <span style="color: #66d9ef">height</span><span style="color: #f92672">:</span> <span style="color: #ae81ff">100</span><span style="color: #f92672">%</span><span style="color: #f8f8f2">;</span>
-      <span style="color: #f8f8f2">}</span>
-      <span style="color: #a6e22e">#map</span> <span style="color: #f8f8f2">{</span>
-        <span style="color: #66d9ef">width</span><span style="color: #f92672">:</span> <span style="color: #ae81ff">100</span><span style="color: #f92672">%</span><span style="color: #f8f8f2">;</span>
-        <span style="color: #66d9ef">height</span><span style="color: #f92672">:</span> <span style="color: #ae81ff">100</span><span style="color: #f92672">%</span><span style="color: #f8f8f2">;</span>
-     <span style="color: #f8f8f2">}</span>
-    <span style="color: #f92672">&lt;/style&gt;</span>
-  <span style="color: #f92672">&lt;/head&gt;</span>
-</pre>
-        </div>
-      </section>
-
-      <section>
-        <h2>Create a basic Leaflet map</h2>
-        <h3>Create a script tag</h3>
-        <!-- HTML generated using hilite.me -->
-        <div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%">  <span style="color: #f92672">&lt;body&gt;</span>
-    <span style="color: #f92672">&lt;div</span> <span style="color: #a6e22e">id=</span><span style="color: #e6db74">&quot;map&quot;</span><span style="color: #f92672">&gt;&lt;/div&gt;</span>
-    <span style="color: #f92672">&lt;script</span> <span style="color: #a6e22e">src=</span><span style="color: #e6db74">&quot;//cdn.leafletjs.com/leaflet-0.7.3/leaflet.js&quot;</span><span style="color: #f92672">&gt;&lt;/script&gt;</span>
-    <span style="color: #f92672">&lt;script&gt;</span>
-
-    <span style="color: #f92672">&lt;/script&gt;</span>
-  <span style="color: #f92672">&lt;/body&gt;</span>
-</pre>
-        </div>
-      </section>
-
-      <section>
-        <h2>Create a basic Leaflet map</h2>
-        <h3>Create a map and assign it to the &quot;div&quot; element</h3>
-        <!-- HTML generated using hilite.me -->
-        <div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">var</span> <span style="color: #a6e22e">map</span> <span style="color: #f92672">=</span> <span style="color: #a6e22e">L</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">map</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;map&#39;</span><span style="color: #f8f8f2">).</span><span style="color: #a6e22e">setView</span><span style="color: #f8f8f2">([</span><span style="color: #ae81ff">39.75</span><span style="color: #f8f8f2">,</span> <span style="color: #f92672">-</span><span style="color: #ae81ff">105</span><span style="color: #f8f8f2">],</span> <span style="color: #ae81ff">15</span><span style="color: #f8f8f2">);</span>
-</pre>
-        </div>
-      </section>
-
-      <section>
-        <h2>Create a basic Leaflet map</h2>
-        <h3>Create a tileLayer and assign it to the map</h3>
-        <!-- HTML generated using hilite.me -->
-        <div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"><pre style="margin: 0; line-height: 125%"><span style="color: #a6e22e">L</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">tileLayer</span><span style="color: #f8f8f2">(</span><span style="color: #e6db74">&#39;https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png&#39;</span><span style="color: #f8f8f2">,</span> <span style="color: #f8f8f2">{</span>
-          <span style="color: #a6e22e">maxZoom</span><span style="color: #f92672">:</span> <span style="color: #ae81ff">18</span><span style="color: #f8f8f2">,</span>
-          <span style="color: #a6e22e">attribution</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&quot;OpenStreetMap, Mapbox, and NPS&quot;</span><span style="color: #f8f8f2">,</span>
-          <span style="color: #a6e22e">id</span><span style="color: #f92672">:</span> <span style="color: #e6db74">&#39;nps.k7chg4fe&#39;</span>
-        <span style="color: #f8f8f2">}).</span><span style="color: #a6e22e">addTo</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">map</span><span style="color: #f8f8f2">);</span>
-        </pre>
-        </div>
-      </section>
-      <section>
-        <h2>Create a basic Leaflet map</h2>
-        <h3>Add a marker to the map</h3>
-        <!-- HTML generated using hilite.me -->
-        <div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-          <pre style="margin: 0; line-height: 125%"><span style="color: #66d9ef">var</span> <span style="color: #a6e22e">marker</span> <span style="color: #f92672">=</span> <span style="color: #a6e22e">L</span><span style="color: #f8f8f2">.</span><span style="color: #a6e22e">marker</span><span style="color: #f8f8f2">([</span><span style="color: #ae81ff">39.75</span><span style="color: #f8f8f2">,</span> <span style="color: #f92672">-</span><span style="color: #ae81ff">105</span><span style="color: #f8f8f2">]).</span><span style="color: #a6e22e">addTo</span><span style="color: #f8f8f2">(</span><span style="color: #a6e22e">map</span><span style="color: #f8f8f2">);</span></pre>
-        </div>
-      </section>
-      <section>
-        <h2>Modify the simple map to use GeoJSON</h2>
-        <h3>Add the &quot;reqwest&quot; library</h3>
-        <!-- HTML generated using hilite.me -->
-        <div style="background: #272822; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;">
-          <pre style="margin: 0; line-height: 125%">  <span style="color: #f92672">&lt;body&gt;</span>
-            <span style="color: #f92672">&lt;div</span> <span style="color: #a6e22e">id=</span><span style="color: #e6db74">&quot;map&quot;</span><span style="color: #f92672">&gt;&lt;/div&gt;</span>
-            <span style="color: #f92672">&lt;style</span> <span style="color: #a6e22e">src=</span><span style="color: #e6db74">&quot;//cdn.leafletjs.com/leaflet-0.7.3/leaflet.js&quot;</span><span style="color: #f92672">&gt;&lt;/script&gt;</span>
-            <span style="color: #f92672">&lt;style</span> <span style="color: #a6e22e">src=</span><span style="color: #e6db74">&quot;//cdnjs.cloudflare.com/ajax/libs/reqwest/1.1.5/reqwest.min.js&quot;</span><span style="color: #f92672">&gt;&lt;/script&gt;</span>
-            <span style="color: #f92672">&lt;script&gt;</span>  <span style="color: #f8f8f2">...</span>
-            <span style="color: #f92672">&lt;/script&gt;</span>  <span style="color: #f92672">&lt;/body&gt;</span>
-          </pre>
-          </div>
-        </section>
-        <section>
-          mapbox, cartodb, npmap
+          <img src="img/jabbascript.png" style="height:300px;">
         </section>
         <section>
           <img src="img/map-interface.png">
         </section>
         <section>
-          Bootleaf
+          <h2>Leaflet:</h2>
+            <h3>A modern open-source JavaScript library for mobile-friendly, interactive web maps.</h3>
+          <pre><code>var map = L.map('map', { center: [12.99766, -84.90838], zoom: 5 });
+          </code></pre>
+        </section>
+        <!-- <section>
+          <h4>Overview</h4>
+          <ul>
+            <li>Has all of the features that most developers need to create web maps</li>
+            <li>Works seamlessly across all major desktop and mobile platforms</li>
+            <li>Designed with performance and usability in mind</li>
+          </ul>
+        </section> -->
+        <section data-background="img/plugins.png" style="width:1100px">
+          <h2 style="background-color:green;color:white;margin-top:20px;padding:15px;">Leaflet Plugins</h2>
         </section>
         <section>
-          Overview of HTML, CSS and js!!!
+          cartoDB.js
+          <pre><code>var map = new L.Map('map_canvas', { center: [0,0], zoom: 2 });
+          </code></pre>
+          mapbox.js
+          <pre><code>L.mapbox.accessToken = 'Access Token';
+          var map = L.mapbox.map('map', 'mapbox.streets').setView([40, -74.50], 9);
+          </code></pre>
+          npmap.js
+          <pre><code>var NPMap = { center: { lat: 39.37, lng: -105.7}, div: 'map'};
+          </code></pre>
         </section>
-      </section>
-      <section>
+        <section data-background="img/bootleaf.png">
+           <h2 style="background-color:green;color:white;margin-top:20px;padding:15px;">Bootleaf</h2>
+        </section>
+        <section>
+          <iframe src="http://bl.ocks.org/d3noob/7644920" style="background-color:#FFF"></iframe>
+        </section>
+        <section>
+          <iframe src="http://bl.ocks.org/wboykinm/raw/b90873f4015fd8a8759e/"></iframe>
+        </section>
         <section>
           <h2>The future is exciting...</h2>
         </section>
@@ -442,12 +316,11 @@
           </ul>
         </section>
         <section>
-          sas platform
-          <img src="sas-platforms.png"/>
+          <img src="sas-platform.png"/>
         </section>
         <section>
           <img src="img/nps.svg">
-          <a href="//github.com/nationalparkservice">NPMap github: github.com/nationalparkservice</a>
+          <a href="//github.com/nationalparkservice" style="color:#000">NPMap github: github.com/nationalparkservice</a>
           <!-- park service-- custom mapping tool -->
           <!-- highly custom webmaps -->
         </section>
@@ -477,19 +350,6 @@
         </section>
         <section>
           <img src="img/fulcrum-data-collection.png" style="bottom:0;left:0;">
-        </section>
-        <section>
-          <img src="img/fulcrum-web-1.jpg" style="width:800px;height:auto;">
-        </section>
-        <section>
-          <img src="img/fulcrum-web.jpg" style="width:800px;height:auto;">
-        </section> 
-        <section>
-          <h2>There are a range of industries that use maps...</h2>
-          <img src="img/fields.jpg">
-        </section>
-        <section>
-          <img src="img/fulcrum-invasive.jpg" style="width:800px;height:auto;">
         </section>
         <section>
           <h2>Offline</h2>
@@ -544,6 +404,19 @@
         <section>
            <h2>Demo!</h2>
         </section>
+        <!-- <section>
+          <img src="img/fulcrum-web-1.jpg" style="width:800px;height:auto;">
+        </section>
+        <section>
+          <img src="img/fulcrum-web.jpg" style="width:800px;height:auto;">
+        </section>
+        <section>
+          <h2>There are a range of industries that use maps...</h2>
+          <img src="img/fields.jpg">
+        </section>
+        <section>
+          <img src="img/fulcrum-invasive.jpg" style="width:800px;height:auto;">
+        </section>  -->
       <section>
         <h2>Resources</h2>
         <ul>
