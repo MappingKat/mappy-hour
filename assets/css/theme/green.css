@@ -74,7 +74,11 @@ pre{
 /*********************************************
  * LINKS
  *********************************************/
-.reveal a:not(.image) {
+a.none{
+  color: none;
+  background: none;
+}
+.reveal a:not(.img) {
   color: #FFF;
   background: #75C21A;
   text-decoration: none;
@@ -84,7 +88,7 @@ pre{
   -o-transition: color .15s ease;
   transition: color .15s ease;
 }
-.reveal a:not(.image):hover {
+.reveal a:not(.img):hover {
   color: #00d1de;
   background: #FFF;
   text-decoration: none;
