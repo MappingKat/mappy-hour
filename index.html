@@ -48,348 +48,365 @@
         <section>
           <iframe src="iframes/road.html" style="margin:0;padding:0;width:100%;height:100px"></iframe>
           <ul>
-            <li>Introdution to Web maps</li>
-            <li>History of web maps</li>
+            <li>Web Maps 101</li>
             <li>
               <img style="width:500px;height:auto;" src="img/fulcrum-carto.png">
             </li>
           <ul>
         </section>
         <section>
-          <section>
-            <h2>What are <span class="yellow">web maps</span>?
-              <iframe src="//giphy.com/embed/6J9EYB2Z27Qg8" width="680" height="470" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a class="attribution" href="http://giphy.com/gifs/shocked-george-clooney-6J9EYB2Z27Qg8">Giphy</a></p>
-          </section>
-          <section>
-            <h2>Great map, but...</h2>
-            <img src="img/beer-map.jpg">
-            <h2>Not a web map...</h2>
-          </section>
-          <section>
-            <a href="//phindee.com">Happy Hour in Portland, OR!!</a>
-            <img src="img/happy-hour.png">
-          </section>
-          <section>
-            <h2>Web maps are <span class="highlight">fast</span>, <span class="highlight">flexible</span> and <span class="highlight">dynamic</span></h2>
-          </section>
-          <section>
-            <h2>They act similarly to paper maps...</h2>
-            <iframe src="iframes/unfold.html" style="height:600px"></iframe>
-            <a class="attribution" href="http://codepen.io/jgx/pen/IbJev">http://codepen.io/jgx/pen/IbJev</a>
-          </section>
-          <!-- Given that, we still ask a lot of the same questions -->
-          <section>
-            <h2>We still ask some of the same questions:</h2>
-            <ul style="font-size:36px">
-              <li class="red">What size will the map be?</li>
-              <li class="orange">What geographic extent will the map be?</li>
-              <li class="yellow">What will the map scale be?</li>
-              <li class="green">What will the map projection be?</li>
-            </ul>
-          </section>
-          <section>
-            <h2>And some additional ones:</h2>
-            <ul style="font-size:36px">
-              <li class="blue">Will other information be placed on top of the map?</li>
-              <li class="purple">Will the map be viewed on multiple devices?</li>
-              <li class="pink">Will the map be queried for additional information?</li>
-            </ul>
-          </section>
-          <section>
-            <img src="img/bike-parts.svg" style="height:200px;">
-            <h2>Web maps have Components...</h2>
-          </section>
-          <section style="padding:0;height:500px">
-            <p>Instead of little parts and components, maps have <em>data.</em><p>
-            <div class="image-center" style="height:500px;">
-              <img style="text-align:center;" src="img/bike-parts.png">
-              <img style="text-align:center;" src="img/data.png">
-            </div>
-          </section>
-          <section>
-            <h2>geoJSON</h2>
-            <pre style="height:500px;">
-              <code style="height:700px;">
-              {
-              "type": "FeatureCollection",
-              "features": [
-                {
-                  "type": "Feature",
-                  "geometry": {
-                    "type": "Point",
-                    "coordinates": [
-                      -104.987825,
-                      39.7414659
-                    ]
-                  },
-                  "properties": {
-                    "name": "Modworks Coworking",
-                    "address": "110 16th St #1300, Denver, CO 80202",
-                    "site": "http://www.modworks.com/"
-                  }
-                },
-                {
-                  "type": "Feature",
-                  "geometry": {
-                    "type": "Point",
-                    "coordinates": [
-                      -104.986191,
-                      39.7589209
-                    ]
-                  },
-                  "properties": {
-                    "name": "Green Spaces",
-                    "address": "1368 26th St, Denver, CO 80205",
-                    "site": "http://www.greenspaces.com/"
-                  }
-                }
-              }
-            </code></pre>
-          </section>
-          <section>
-            <h3>Just like different types of bikes, you have different types of data and styles.</h3>
-            <div class="image-center" style="height:500px;">
-              <img style="text-align:center;" src="img/lots-bikes.png">
-              <img style="text-align:center;" src="img/vector-tiles-1.png">
-            </div>
-          </section>
-          <section>
-            <h3>Instead of pedals and wheels, web maps have <span class="orange">databases</span> and <span class="orange">servers</span>.</h3><br>
-            <span class="clouditem" style="font-size: 96.10265141818672%; color: rgb(150, 76, 179);">    PostGIS</span> <span class="clouditem" style="font-size: 83.60962371807545%; color: rgb(179, 93, 76);">    Redis</span> <span class="clouditem" style="font-size: 63.66907241288573%; color: rgb(76, 167, 179);">    PostgreSQL</span> <span class="clouditem" style="font-size: 98.66739843040705%; color: rgb(76, 145, 179);">    GIS Dependencies</span> <span class="clouditem" style="font-size: 98.30495120491832%; color: rgb(179, 90, 76);">    NodeJS</span> <span class="clouditem" style="font-size: 93.73538852203637%; color: rgb(143, 76, 179);">    Ubuntu</span><br>
-            <iframe src="iframes/ride.html"></iframe>
-            <a class="attribution" href="http://codepen.io/mandymichael/pen/LEpywo">http://codepen.io/mandymichael/pen/LEpywo</a>
-            <!-- http://blogs.esri.com/esri/arcgis/2015/07/20/vector-tiles-preview/ -->
-          </section>
-          <section>
-            <h2>Maps are <span class="highlight">Tiles</span></h2>
-            <img src="img/tile-url.png">
-          </section>
-          <section>
-            <h2 class="highlight">Map Tiles</h2>
-            <h3>Pre-rendered images (tiles) that fit seamlessly together in geographic space in order to make maps load quickly.</h3>
-          </section>
-             <!-- If you've ever been on a slower internet connection, you can actually see the tiles loading in the map -->
-          <section>
-            <h3>Map tiles are 256x256 pixels and organized based on coordinates (x,y) and zoom levels (z).</h3>
-            <img src="img/tiles.png">
-          </section>
-          <!-- These tiles are projected in web mercator -->
-          <section>
-            <h2 class="highlight">Web Mercator</h2>
-            <h3>The tiling scheme used by most web maps.</h3>
-            <img src="img/web-mercator.png">
-          </section>
-          <section>
-            <h3 class="highlight">Zoom Level</h3>
-            <h4>Defines the scale of the current map view. Ranges from 0 (entire world) to 21 (individual building level).</h4>
-            <img src="img/zoom-levels.png">
-          </section>
-          <section>
-            <iframe src="http://bl.ocks.org/anonymous/raw/2def3176d6a3cdea278a/" style="height:590px;width:707px;"></iframe>
-          </section>
-          <section>
-            <img src="img/vector-tiles-2.png">
-          </section>
-          <section>
-            <h2>Map tiles and Web Mercator are still the <span class ="highlight">de facto</span> web mapping standard</h2>
-          </section>
-          <section>
-            <img src="img/tile-url.png">
-            <p>http://<span class="red">tile.openstreetmap.org</span>/<span class="green">17</span>/<span class="yellow">27306</span>/<span class="yellow">49738</span>.<span class="blue">png</span></p>
-            <p><span class="red">tile server</span><span class="green">&nbsp;&nbsp;zoom level</span><span class="yellow">&nbsp;&nbsp;x/y of tile in the grid</span>
-            <p class="blue">image format of the tile</p>
-          </section>
-          <section>
-            <h2>Basemap vs. Overlay</h2>
-            <img src="img/data-layers.png"/><a class="attribution" href="https://www.mapbox.com/mapbox-studio/#darwin">Mapbox</a>
-          </section>
-          <section>
-            <img src="img/basemap-overlay.png">
-          </section>
-          <section>
-            <h2 class="highlight">Basemap</h2>
-            <h3>A map that provides geographic context to help support a wide variety of overlays- typically raster tiles.</h3>
-          </section>
-          <section>
-            <h2 class="highlight">Overlays</h2>
-            <h3>Themes of information overlaid on a basemap that help tell a story - typically vector.</h3>
-          </section>
-          <section>
-            <h3>... we now have <span class="orange">vector tiles</span></h3>
-            <img src="img/kitchen-tiles.png">
-          </section>
-          <section>
-            <!-- good resources here: https://www.mapbox.com/developers/vector-tiles/ -->
-            <h2 class="highlight">Vector Tiles</h2>
-            <h3>Similar to image tiles in terms of z/x/y but instead of images being served in each tile, data are.</h3>
-            <!-- <span class="emphasis">Vector tiles</span>, or data that is encoded into tiles (images) that can be rendered dynamically</h3> -->
-          </section>
-          <section>
-            <iframe src="http://coolmaps.esri.com/VectorTiles/"></iframe>
-          </section>
-          <section>
-           <img src="img/map-interface.png">
-          </section>
-          <section>
-            <h2 class="highlight">User Interface</h2>
-            <h3>The "container" surrounding the map- built using HTML.</h3>
-          </section>
-          <!-- Done with HTML -->
-          <!-- Screenshot showing what a user interface on a map is and its function (in the context of NPS black bar, legend information, tabbed descriptions, search capabilities, etc.) -->
-          <section>
-            <img src="img/map-interaction.png">
-          </section>
-          <section>
-            <img src="img/map.png">
-          </section>
-          <section>
-            <h2 class="highlight">Map Functionality</h2>
-            <h3>Tools used to interact with the map and the overlaid content- added using JavaScript.</h3>
-          </section>
-            <section>
-            <h2>All these maps have common elements:</h2>
-            <ul>
-              <li>A map</li> <!-- The actual map -->
-              <li>A user interface</li> <!-- The container that holds the map -->
-              <li>Functionality to interact with the map</li> <!-- Map controls and behaviors: zoom, pan, search, query, etc. -->
-            </ul>
-          </section>
-          <section>
-            <img src="img/map-interface.png">
-          </section>
-          <section>
-            <iframe src="http://mappingkat.github.io/indian-removal/"></iframe>
-          </section>
+          <h2>What are <span class="yellow">web maps</span>?
+            <iframe src="//giphy.com/embed/6J9EYB2Z27Qg8" width="680" height="470" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a class="attribution" href="http://giphy.com/gifs/shocked-george-clooney-6J9EYB2Z27Qg8">Giphy</a></p>
         </section>
         <section>
-          <section>
-            <h2>So, <span class="highlight">who</span> was involved in this evolution?</h2>
-          </section>
-          <section>
-            <p>Let's travel back to 1990s...</p>
-            <iframe src="//giphy.com/embed/Wxo7Mjk1Vksdq" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a class="attribution" href="http://giphy.com/gifs/anniversary-microsoft-windows-95-Wxo7Mjk1Vksdq">GIPHY</a></p>
-          </section>
-          <section>
-            <h2>In <span class="highlight">1996</span>, MapQuest introduced the first popular web map</h2>
-          </section>
-          <section>
-            <h2 style="background-color:purple;color:white;margin-top:20px;padding:15px;">MapQuest</h2>
-            <img src="img/mapquest.png">
-            <p>Started in 1997, bought by AOL for $1.1 bil</p>
-          </section>
-          <section>
-            <h2>It was like a <span class="emphasis">road map</span> and <span class="emphasis">yellow pages</span> combined. Its primary purpose was to find places and get directions.</h2>
-          </section>
-          <section>
-            <h2 style="background-color:purple;color:white;margin-top:20px;padding:15px;">Yahoo</h2>
-            <img src="img/yahoo.jpg">
-          </section>
-          <section>
-            <h2>In <span class="highlight">2005</span>, Google released their version of the web map</h2>
-          </section>
-          <section>
-            <!-- In 2005, Google introduced slippy maps,  -->
-            <h2 style="background-color:purple;color:white;margin-top:20px;padding:15px;">Google</h2>
-            <img src="img/google.png">
-          </section>
-          <section>
-            <h2>Google Maps became more popular than MapQuest because the maps were <span class="highlight">faster</span></h2>
-          </section>
-          <!-- We should mention here that MapQuest also used tiles but their tiling scheme was not as efficient as Google's and with every pan and zoom on the map, the page had to be refreshed -->
-          <section>
-            <h2>The maps were faster because of Google's use of <span class ="highlight">map tiles</span></h2>
-          </section>
-          <section data-background="img/first-mashup.jpg"></section>
-          <section>
-            <h2>And Google also made its technologies available to developers through an <span class="highlight">API</span></h2>
-          </section>
-          <section>
-            <img src="img/google-preview.png">maps.google.com</a>
-          </section>
-          <section tagcloud="" class="present tagcloud" style="display: block;">
-            <h3>Meanwhile, competitors have emerged...</h3>
-          </section>
-          <section>
-            <h3>Open source tools and libraries are gaining popularity</h3>
-            <br><span class="clouditem" style="font-size: 156.10265141818672%; color: rgb(150, 76, 179);">    Leaflet</span> <span class="clouditem" style="font-size: 183.60962371807545%; color: rgb(179, 93, 76);">    CartoDB</span> <span class="clouditem" style="font-size: 163.66907241288573%; color: rgb(76, 97, 179);">    Mapbox</span> <span class="clouditem" style="font-size: 198.66739843040705%; color: rgb(76, 145, 179);">    GitHub</span> <span class="clouditem" style="font-size: 198.30495120491832%; color: rgb(179, 90, 76);">    KML</span> <span class="clouditem" style="font-size: 193.73538852203637%; color: rgb(143, 76, 179);">    GeoJSON</span> <span class="clouditem" style="font-size: 149.88388252444565%; color: rgb(107, 179, 76);">    CSV</span> <span class="clouditem" style="font-size: 186.96960015688092%; color: rgb(76, 179, 167);">    WMS</span> <span class="clouditem" style="font-size: 195.18062303308398%; color: rgb(76, 179, 160);">    Tiled</span> </span> <span class="clouditem" style="font-size: 155.7243404071778%; color: rgb(76, 179, 134);">    OpenStreetMap</span> <span class="clouditem" style="font-size: 176.9069387484342%; color: rgb(179, 76, 114);">    Vector Tiles</span> <span class="clouditem" style="font-size: 165.42575665283948%; color: rgb(163, 76, 179);">    UTFGrid</span> <span class="clouditem" style="font-size: 148.2439872669056%; color: rgb(76, 179, 78);">    JavaScript</span> <span class="clouditem" style="font-size: 184.3598467297852%; color: rgb(76, 179, 117);">    HTML</span> <span class="clouditem" style="font-size: 157.32739641796798%; color: rgb(138, 76, 179);">    CSS</span> <span class="clouditem" style="font-size: 177.55439032334834%; color: rgb(165, 76, 179);">    Node.js</span> <span class="clouditem" style="font-size: 149.08941294066608%; color: rgb(157, 179, 76);">    Grunt</span> <span class="clouditem" style="font-size: 167.53705204464495%; color: rgb(76, 134, 179);">    MapQuest</span></span> <span class="clouditem" style="font-size: 193.0041212681681%; color: rgb(126, 179, 76);">    ExtJS</span> <span class="clouditem" style="font-size: 161.27999428194016%; color: rgb(174, 179, 76);">    PostgreSQL</span> <span class="clouditem" style="font-size: 187.0986875705421%; color: rgb(76, 102, 179);">    PostGIS</span> <span class="clouditem" style="font-size: 142.29869320522994%; color: rgb(76, 179, 157);">    SQL Server</span> <span class="clouditem" style="font-size: 164.81037794146687%; color: rgb(127, 76, 179);"></span> <span class="clouditem" style="font-size: 161.09244556631893%; color: rgb(76, 179, 109);">    Bootstrap</span> <span class="clouditem" style="font-size: 146.32043632213026%; color: rgb(175, 76, 179);">    TileMill</span> <span class="clouditem" style="font-size: 158.61324864905328%; color: rgb(76, 179, 131);">    QGIS</span> <span class="clouditem" style="font-size: 173.15360988955945%; color: rgb(179, 76, 139);">    Maki</span> <span class="clouditem" style="font-size: 196.9772030506283%; color: rgb(179, 76, 85);">    Heroku</span> <span class="clouditem" style="font-size: 190.83041932433844%; color: rgb(76, 179, 121);">    EC2</span> <span class="clouditem" style="font-size: 193.002316839993%; color: rgb(179, 97, 76);">    S3</span> <span class="clouditem" style="font-size: 152.51278991345316%; color: rgb(179, 76, 163);">    Zoomify</span> <span class="clouditem" style="font-size: 140.31181874219328%; color: rgb(179, 76, 124);">    jQuery</span> <span class="clouditem" style="font-size: 172.5516069913283%; color: rgb(179, 170, 76);">    Jasmine</span> <span class="clouditem" style="font-size: 161.32711669895798%; color: rgb(76, 179, 155);">    GDAL</span>
-          </section>
-          <section>
-            <img src="img/osm-preview.png">OpenStreetMap.org</a>
-          </section>
-          <section style="margin:0;">
-              <img src="img/companies.png" style="height:800px;overflow:auto;margin:0;padding:0;">
-          </section>
+          <h4>Great map, but...</h4>
+          <img src="img/beer-map.jpg">
+          <h4>Not a web map...</h4>
         </section>
         <section>
-          <section>
-            <h4>How do I start to build a map?</h4>
-            <iframe src="//giphy.com/embed/mPytjcsG3XS4o" width="380" height="197" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/confused-lost-disney-mPytjcsG3XS4o" class="attribution">giphy</a></p>
-          </section>
-          <section>
-            <img src="img/data-options.png" style="width:800px;height:auto;">
-          </section>
-          <section>
-            <img src="img/fulcrum-carto.png">
-          </section>
-          <section>
-            <img src="img/fulcrum-data-collection.png" style="bottom:0;left:0;">
-          </section>
-          <section>
-            <img src="img/fulcrum-web-1.jpg" style="width:800px;height:auto;">
-          </section>
-          <section>
-            <img src="img/fulcrum-web.jpg" style="width:800px;height:auto;">
-          </section> 
-          <section>
-            <h2>There are a range of industries that use maps...</h2>
-            <img src="img/fields.jpg">
-          </section>
-          <section>
-            <img src="img/fulcrum-invasive.jpg" style="width:800px;height:auto;">
-          </section>
-          <section>
-            <h2>Offline</h2>
-            <img src="img/fulcrum-offline.png">
-          </section>
-          <section>
-            <h2>Record Linking</h2>
-            <img src="img/fulcrum-record-linking.png">
-          </section>
-           <section>
-            <h2>Calculated Fields</h2>
-            <img src="img/fulcrum-calculating.jpg">
-          </section>
-          <section>
-            <h2>Webhooks</h2>
-            <img src="img/fulcrum-webhooks.png" >
-          </section>
-          <section>
-            <h2>Integrations</h2>
-            <img src="img/fulcrum-integrations.png" style="height:300px;">
-          </section>
-          <section>
-            <img src="img/fulcrum-geobooze.png" style="height:700px;width:1200px">
-          </section>
-          <section>
-            <iframe src="http://fulcrumapp.github.io/fulcrum-styler/?id=a5c8e07368efde43#"></iframe>
-          </section>
-        <section>
-          <section>
-             Demo Fulcrum App
-          </section>
-          <section>
-             <a href="http://cartodb.com">CartoDB</a>
-          </section>
+          <iframe src="http://www.nytimes.com/interactive/2015/07/08/us/census-race-map.html?_r=1"></iframe>
         </section>
         <section>
+          <iframe src="http://www.nps.gov/yell/planyourvisit/campgrounds.htm"></iframe>
         </section>
         <section>
-          <h2>Resources</h2>
+          <h2>Web maps have these common elements:</h2>
           <ul>
-            <li><a href="http://maptime.io/lessons-resources/">http://maptime.io/lessons-resources/</a></li>
-            <li>mapschool.io</li>
+            <li>A map</li> <!-- The actual map -->
+            <li>Functionality to interact with the map</li> <!-- Map controls and behaviors: zoom, pan, search, query, etc. -->
+            <li>A user interface</li> <!-- The container that holds the map -->
           </ul>
         </section>
+        <section>
+          <a href="//phindee.com">Happy Hour in Portland, OR!!</a>
+          <img src="img/happy-hour.png">
+        </section>
+        <section>
+          <h2>So, <span class="highlight">who</span> was involved in this evolution?</h2>
+          <p>Let's travel back to 1990s...</p>
+          <img src="img/1990s.png">
+        </section>
+        <section>
+          <h2>In <span class="highlight">1996</span>, MapQuest introduced the first popular web map</h2>
+        </section>
+        <section>
+          <h2 style="background-color:purple;color:white;margin-top:20px;padding:15px;">MapQuest</h2>
+          <img src="img/mapquest.png">
+        </section>
+        <section>
+          <h2>It was like a <span class="emphasis">road map</span> and <span class="emphasis">yellow pages</span> combined. Its primary purpose was to find places and get directions.</h2>
+        </section>
+        <section>
+          <h2 style="background-color:purple;color:white;margin-top:20px;padding:15px;">Yahoo</h2>
+          <img src="img/yahoo.jpg">
+        </section>
+        <section>
+          <h2>In <span class="highlight">2005</span>, Google released their version of the web map</h2>
+        </section>
+        <section>
+          <!-- In 2005, Google introduced slippy maps,  -->
+          <h2 style="background-color:purple;color:white;margin-top:20px;padding:15px;">Google</h2>
+          <img src="img/google.png">
+        </section>
+        <section>
+          <h2>Google Maps became more popular than MapQuest because the maps were <span class="highlight">faster</span></h2>
+        </section>
+        <!-- We should mention here that MapQuest also used tiles but their tiling scheme was not as efficient as Google's and with every pan and zoom on the map, the page had to be refreshed -->
+        <section>
+          <h2>The maps were faster because of Google's use of <span class ="highlight">map tiles</span></h2>
+        </section>
+        <section>
+          <h2>And Google also made its technologies available to developers through an <span class="highlight">API</span></h2>
+        </section>
+        <section data-background="img/first-mashup.jpg"></section>
+        <section>
+          <h2>Fast Forward to Today...</h2>
+          <img src="img/today.jpg">
+        </section>
+        <section style="margin:0;">
+            <img src="img/companies.png" style="height:800px;overflow:auto;margin:0;padding:0;">
+        </section>
+        <section>
+          <h3>Open source tools and libraries are gaining popularity</h3>
+          <br><span class="clouditem" style="font-size: 56.10265141818672%; color: rgb(150, 76, 179);">    Leaflet</span> <span class="clouditem" style="font-size: 183.60962371807545%; color: rgb(179, 93, 76);">    CartoDB</span> <span class="clouditem" style="font-size: 63.66907241288573%; color: rgb(76, 97, 179);">    Mapbox</span> <span class="clouditem" style="font-size: 98.66739843040705%; color: rgb(76, 145, 179);">    GitHub</span> <span class="clouditem" style="font-size: 198.30495120491832%; color: rgb(179, 90, 76);">    KML</span> <span class="clouditem" style="font-size: 193.73538852203637%; color: rgb(143, 76, 179);">    GeoJSON</span> <span class="clouditem" style="font-size: 149.88388252444565%; color: rgb(107, 179, 76);">    CSV</span> <span class="clouditem" style="font-size: 186.96960015688092%; color: rgb(76, 179, 167);">    WMS</span> <span class="clouditem" style="font-size: 195.18062303308398%; color: rgb(76, 179, 160);">    Tiled</span> </span> <span class="clouditem" style="font-size: 55.7243404071778%; color: rgb(76, 179, 134);">    OpenStreetMap</span> <span class="clouditem" style="font-size: 176.9069387484342%; color: rgb(179, 76, 114);">    Vector Tiles</span> <span class="clouditem" style="font-size: 65.42575665283948%; color: rgb(163, 76, 179);">    UTFGrid</span> <span class="clouditem" style="font-size: 148.2439872669056%; color: rgb(76, 179, 78);">    JavaScript</span> <span class="clouditem" style="font-size: 184.3598467297852%; color: rgb(76, 179, 117);">    HTML</span> <span class="clouditem" style="font-size: 57.32739641796798%; color: rgb(138, 76, 179);">    CSS</span> <span class="clouditem" style="font-size: 177.55439032334834%; color: rgb(165, 76, 179);">    Node.js</span> <span class="clouditem" style="font-size: 149.08941294066608%; color: rgb(157, 179, 76);">    Grunt</span> <span class="clouditem" style="font-size: 67.53705204464495%; color: rgb(76, 134, 179);">    MapQuest</span></span> <span class="clouditem" style="font-size: 93.0041212681681%; color: rgb(126, 179, 76);">    ExtJS</span> <span class="clouditem" style="font-size: 61.27999428194016%; color: rgb(174, 179, 76);">    PostgreSQL</span> <span class="clouditem" style="font-size: 87.0986875705421%; color: rgb(76, 102, 179);">    PostGIS</span> <span class="clouditem" style="font-size: 42.29869320522994%; color: rgb(76, 179, 157);">    SQL Server</span> <span class="clouditem" style="font-size: 64.81037794146687%; color: rgb(127, 76, 179);"></span> <span class="clouditem" style="font-size: 161.09244556631893%; color: rgb(76, 179, 109);">    Bootstrap</span> <span class="clouditem" style="font-size: 46.32043632213026%; color: rgb(175, 76, 179);">    TileMill</span> <span class="clouditem" style="font-size: 58.61324864905328%; color: rgb(76, 179, 131);">    QGIS</span> <span class="clouditem" style="font-size: 73.15360988955945%; color: rgb(179, 76, 139);">    Maki</span> <span class="clouditem" style="font-size: 96.9772030506283%; color: rgb(179, 76, 85);">    Heroku</span> <span class="clouditem" style="font-size: 190.83041932433844%; color: rgb(76, 179, 121);">    EC2</span> <span class="clouditem" style="font-size: 193.002316839993%; color: rgb(179, 97, 76);">    S3</span> <span class="clouditem" style="font-size: 152.51278991345316%; color: rgb(179, 76, 163);">    Zoomify</span> <span class="clouditem" style="font-size: 140.31181874219328%; color: rgb(179, 76, 124);">    jQuery</span> <span class="clouditem" style="font-size: 72.5516069913283%; color: rgb(179, 170, 76);">    Jasmine</span> <span class="clouditem" style="font-size: 161.32711669895798%; color: rgb(76, 179, 155);">    GDAL</span>
+        </section>
+        <section>
+          <h2>Web map components</h2>
+          <img style="text-align:center;" src="img/data.png">
+        </section>
+        <section>
+          <img src="img/map.png">
+        </section>
+        <section>
+          <h2 class="highlight">Basemap</h2>
+          <h3>A map that provides geographic context to help support a wide variety of overlays- typically raster tiles.</h3>
+        </section>
+        <section>
+          <h2>Basemaps are <span class="highlight">Tiles</span></h2>
+          <iframe src="iframes/unfold.html"></iframe>
+        </section>
+        <section>
+          <h2 class="highlight">Map Tiles</h2>
+          <h3>Pre-rendered images (tiles) that fit seamlessly together in geographic space in order to make maps load quickly.</h3>
+        </section>
+           <!-- If you've ever been on a slower internet connection, you can actually see the tiles loading in the map -->
+        <section>
+          <h3>Map tiles are 256x256 pixels and organized based on coordinates (x,y) and zoom levels (z).</h3>
+          <img src="img/tiles.png">
+        </section>
+        <section>
+          <h3 class="highlight">Zoom Level</h3>
+          <h4>Defines the scale of the current map view. Ranges from 0 (entire world) to 21 (individual building level).</h4>
+          <img src="img/zoom-levels.png">
+        </section>
+        <section>
+          <iframe src="http://bl.ocks.org/anonymous/raw/2def3176d6a3cdea278a/" style="height:590px;width:707px;"></iframe>
+        </section>
+        <section>
+          <img src="img/tile-url.png">
+          <p>http://<span class="red">tile.openstreetmap.org</span>/<span class="green">17</span>/<span class="yellow">27306</span>/<span class="yellow">49738</span>.<span class="blue">png</span></p>
+          <p><span class="red">tile server</span><span class="green">&nbsp;&nbsp;zoom level</span><span class="yellow">&nbsp;&nbsp;x/y of tile in the grid</span>
+          <p class="blue">image format of the tile</p>
+        </section>
+        <section>
+          <h3>Basemaps are available from many sources</h3>!!!
+          <ul>
+            <li>Free:OSM, Stamen, Mapbox, CartoDB</li>
+            <li>Paid: ESRI</li>
+            <li>Custom: Mapbox, ESRI</li>
+          </ul>
+        </section>
+        <section>
+          <img src="img/osm-preview.png">OpenStreetMap.org</a>
+        </section>
+        <section>
+          <img src="img/mapquest-update.png">
+        </section>
+        <section>
+          <img src="img/pinterest.png">
+        </section>
+        <section>
+          <iframe src="http://www.nps.gov/npmap/tools/park-tiles"></iframe>
+        </section>
+        <section>
+          <img src="img/map-interaction.png">
+        </section>
+        <section>
+          <h2 class="highlight">Overlays</h2>
+          <h3>Themes of information overlaid on a basemap that help tell a story - typically vector.</h3>
+        </section>
+        <section>
+          Data + Location + geometry = Geospatial data
+        </section>
+        <section>
+          <h2>Variety of data formats for overlays</h2>!!!
+        </section>
+        <section>
+          <h2>GeoJSON</h2>
+          <pre style="height:500px;">
+            <code style="height:700px;">
+            {
+            "type": "FeatureCollection",
+            "features": [
+              {
+                "type": "Feature",
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -104.987825,
+                    39.7414659
+                  ]
+                },
+                "properties": {
+                  "name": "Modworks Coworking",
+                  "address": "110 16th St #1300, Denver, CO 80202",
+                  "site": "http://www.modworks.com/"
+                }
+              },
+              {
+                "type": "Feature",
+                "geometry": {
+                  "type": "Point",
+                  "coordinates": [
+                    -104.986191,
+                    39.7589209
+                  ]
+                },
+                "properties": {
+                  "name": "Green Spaces",
+                  "address": "1368 26th St, Denver, CO 80205",
+                  "site": "http://www.greenspaces.com/"
+                }
+              }
+            }
+          </code></pre>
+        </section>
+        <section>
+          <img src="img/basemap-overlay.png">
+        </section>
+        <section>
+          <h2>JavaScript libraries!</h2>
+        </section>
+        <section>
+          <h2>Leaflet:</h2>
+            <h3>A modern open-source JavaScript library for mobile-friendly, interactive web maps.</h3>
+          <pre><code>
+            var map = L.map('map').setOptions()
+          </code></pre>
+        </section>
+        <section>
+          Leaflet plugins
+        </section>
+        <section>
+          mapbox, cartodb, npmap
+        </section>
+        <section>
+          <img src="img/map-interface.png">
+        </section>
+        <section>
+          Bootleaf
+        </section>
+        <section>
+          Overview of HTML, CSS and js!!!
+        </section>
+      </section>
+      <section>
+        <section>
+          <h2>The future is exciting...</h2>
+        </section>
+        <section>
+          <h3>... we now have <span class="orange">vector tiles</span></h3>
+          <img src="img/kitchen-tiles.png">
+        </section>
+        <section>
+          <iframe src="http://coolmaps.esri.com/VectorTiles/"></iframe>
+        </section>
+        <section>
+          <img src="img/d3.png"/>
+        </section>
+        <section>
+          <h4>How do I get started?</h4>
+          <iframe src="//giphy.com/embed/mPytjcsG3XS4o" width="380" height="197" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="http://giphy.com/gifs/confused-lost-disney-mPytjcsG3XS4o" class="attribution">giphy</a></p>
+        </section>
+        <section>
+          <h2>Planning a web map</h2>
+          <ul style="font-size:36px">
+            <li class="orange">What is the purpose of the map?</li>
+            <li class="blue">Where can I get the data?</li>
+            <li class="pink">Will the map be queried for additional information?</li>
+            <li class="purple">Will the map be viewed on multiple devices?</li>
+          </ul>
+        </section>
+        <section>
+          sas platform
+          <img src="sas-platforms.png"/>
+        </section>
+        <section>
+          <img src="img/nps.svg">
+          <a href="//github.com/nationalparkservice">NPMap github: github.com/nationalparkservice</a>
+          <!-- park service-- custom mapping tool -->
+          <!-- highly custom webmaps -->
+        </section>
+        <section>
+          <iframe src="http://mappingkat.github.io/indian-removal/"></iframe>
+        </section>
+        <section>
+          <img src="img/fulcrum-carto.png">
+        </section>
+        <section>
+          <iframe src="https://team.cartodb.com/u/mamataakella/viz/a23ea514-624e-11e5-bcfb-0e853d047bba/embed_map"></iframe>
+        </section>
+        <section>
+          <h2>Planning a web map</h2>
+          <ul style="font-size:36px">
+            <li class="orange">What is the purpose of the map?</li>
+            <li class="blue">Where can I get the data?</li>
+            <li class="pink">Will the map be queried for additional information?</li>
+            <li class="purple">Will the map be viewed on multiple devices?</li>
+          </ul>
+        </section>
+        <section>
+          <img src="img/fulcrum-carto.png">
+        </section>
+        <section>
+          <img src="img/data-options.png" style="width:800px;height:auto;">
+        </section>
+        <section>
+          <img src="img/fulcrum-data-collection.png" style="bottom:0;left:0;">
+        </section>
+        <section>
+          <img src="img/fulcrum-web-1.jpg" style="width:800px;height:auto;">
+        </section>
+        <section>
+          <img src="img/fulcrum-web.jpg" style="width:800px;height:auto;">
+        </section> 
+        <section>
+          <h2>There are a range of industries that use maps...</h2>
+          <img src="img/fields.jpg">
+        </section>
+        <section>
+          <img src="img/fulcrum-invasive.jpg" style="width:800px;height:auto;">
+        </section>
+        <section>
+          <h2>Offline</h2>
+          <img src="img/fulcrum-offline.png">
+        </section>
+        <section>
+          <h2>Record Linking</h2>
+          <img src="img/fulcrum-record-linking.png">
+        </section>
+         <section>
+          <h2>Calculated Fields</h2>
+          <img src="img/fulcrum-calculating.jpg">
+        </section>
+        <section>
+          <h2>Webhooks</h2>
+          <img src="img/fulcrum-webhooks.png" >
+        </section>
+        <section>
+          <h2>Integrations</h2>
+          <img src="img/fulcrum-integrations.png" style="height:300px;">
+        </section>
+        <section>
+          <img src="img/fulcrum-geobooze.png" style="height:700px;width:1200px">
+        </section>
+        <section>
+           <a href="http://cartodb.com"><img src="img/cartodb-logo.png"></a>
+        </section>
+        <section>
+          <h4>Using CartoDB you can:</h4>
+          <ul style="font-size:36px">
+            <li>easily overlay data onto a map</li>
+            <li>analyze the data to reveal spatial patterns</li>
+            <li>tell stories by creating beautiful visualizations</li>
+            <li>and then easily share them with the world!</li>
+          </ul>
+        </section>
+        <section>
+           <img src="img/cartodb-maps.png">
+        </section>
+        <section>
+          <h2>CartoDB combines:</h2>
+          <ul>
+            <li>the power of PostGIS and SQL</li>
+            <li>CartoCSS for map styling</li>
+            <li>Mapnik for tile rendering</li>
+            <li>Leaflet for the viewing interface</li>
+          </ul>
+        </section>
+        <section>
+          <h2>These technologies are all packaged into one easy to use online interface.</h2>
+        </section>
+        <section>
+           <h2>Demo!</h2>
+        </section>
+      <section>
+        <h2>Resources</h2>
+        <ul>
+          <li><a href="http://maptime.io/lessons-resources/">http://maptime.io/lessons-resources/</a></li>
+          <li>mapschool.io</li>
+        </ul>
+      </section>
     </div>
     <script src="assets/js/head.min.js"></script>
     <script src="assets/js/reveal.js"></script>
