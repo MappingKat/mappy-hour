@@ -9,17 +9,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.css" rel="stylesheet">
-    <link href="assets/css/reveal.min.css" rel="stylesheet">
-    <link href="assets/css/theme/green.min.css" id="theme" rel="stylesheet">
-    <link href="assets/lib/css/zenburn.css" rel="stylesheet">
+    <link href="css/reveal.css" rel="stylesheet">
+    <link href="css/theme/green.css" id="theme" rel="stylesheet">
+    <link href="lib/css/zenburn.css" rel="stylesheet">
     <script>
-    //   if (window.location.search.match(/print-pdf/gi)) {
-    //     var link = document.createElement('link');
-    //     link.href = 'css/print/pdf.css';
-    //     link.rel = 'stylesheet';
-    //     link.type = 'text/css';
-    //     document.getElementsByTagName('head')[0].appendChild(link);
-    //   }
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
     </script>
     <!--[if lt IE 9]>
     <script src="lib/js/html5shiv.js"></script>
@@ -29,15 +27,6 @@
   <body>
     <div class="reveal">
       <div class="slides">
-        <section>
-         <img src="img/dsw.png" style="height:700px">
-        </section>
-        <section>
-          <img src="img/dsw-sponsor.png" style="height:700px">
-        </section>
-        <section>
-          <img src="img/dws-sponsor2.png" style="height:700px">
-        </section>
         <section>
          <img src="img/first.png" style="height:700px"/>
         </section>
@@ -53,6 +42,7 @@
             <p><a target="_blank" href="twitter.com/mamataakella">@mamataakella</a></p>
             <p><a target="_blank" href="http://www.fulcrumapp.com/">https://cartodb.com/</a></p>
           </div>
+          <p style="font-size:24px;margin-top:10px">~Outline can be found on the <a href="https://github.com/MappingKat/mappy-hour/wiki/Outline">repo wiki</a>~</p>
         </section>
         <section>
           <iframe src="iframes/road.html" style="margin:0;padding:0;width:100%;height:100px"></iframe>
@@ -63,10 +53,10 @@
             </li>
           <ul>
         </section>
-        <!-- <section>
+        <section>
           <h2>What are <span class="yellow">web maps</span>?
             <iframe src="//giphy.com/embed/6J9EYB2Z27Qg8" width="680" height="470" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a target="_blank" class="attribution" href="http://giphy.com/gifs/shocked-george-clooney-6J9EYB2Z27Qg8">Giphy</a></p>
-        </section> -->
+        </section>
         <section>
           <h4>Great map, but...</h4>
           <img src="img/beer-map.jpg">
@@ -74,10 +64,10 @@
         </section>
         <section>
           <img src="img/nytimes-denver.jpg"><br>
-          <a target="_blank" class="none" href="http://www.nytimes.com/interactive/2015/07/08/us/census-race-map.html?_r=1">NYTimes Census Race Map</a>
+          <a target="_blank" class="none" href="http://www.nytimes.com/interactive/2015/07/08/us/census-race-map.html?_r=1">NY Times Mapping Segregation</a>
         </section>
         <section>
-          <iframe src="http://www.nps.gov/yell/planyourvisit/campgrounds.htm"></iframe>
+          <iframe src="http://www.nps.gov/maps/embed.html?mapId=a1091660-898e-4479-8837-f50d3ede9650"></iframe>
         </section>
         <section>
           <h2>Web maps have these common elements:</h2>
@@ -190,21 +180,21 @@
           <img src="img/osm-preview.png">Openstreetmap.org
         </section>
         <section>
-          <img src="img/mapquest-update.png">Mapbox.com
+          <img src="img/mapquest-update.png">Mapquest.com
         </section>
         <section>
           <img src="img/pinterest.png">Pinterest.com
         </section>
         <section>
           <iframe src="http://www.nps.gov/maps/embed.html?mapId=f93c526b-029d-4b5e-b9f5-0cfcc9eb8d5d"></iframe>
-          <!-- <iframe src="http://www.nps.gov/npmap/tools/park-tiles/"></iframe>Park Tiles -->
+          <a href="http://www.nps.gov/npmap/tools/park-tiles/">Park Tiles</a>
         </section>
         <section>
           <img src="img/map-interaction.png">
         </section>
         <section>
           <h2 class="highlight">Overlays</h2>
-          <h3>Themes of information overlaid on a basemap that help tell a story - typically vector.</h3>
+          <h3>Themes of information, typically vector, overlaid on a basemap that help tell a story.</h3>
         </section>
         <section>
           <h2><span class="yellow">Data</span> + <span class="pink">Location</span> + <span class="orange">geometry</span> = Geospatial data</h2>
@@ -214,8 +204,8 @@
         </section>
         <section>
           <h2>GeoJSON</h2>
-          <pre style="height:500px;">
-            <code style="height:700px;">
+          <pre>
+            <code>
             {
             "type": "FeatureCollection",
             "features": [
@@ -260,9 +250,6 @@
           <img src="img/jabbascript.png" style="height:300px;">
         </section>
         <section>
-          <img src="img/map-interface.png">
-        </section>
-        <section>
           <h2 class="highlight">Leaflet</h2>
             <h3>A modern open-source JavaScript library for mobile-friendly, interactive web maps.</h3>
           <pre><code>var map = L.map('map', { center: [12.99766, -84.90838], zoom: 5 });
@@ -292,10 +279,13 @@
           </code></pre>
         </section>
         <section>
-          <iframe src="http://bl.ocks.org/d3noob/7644920" style="background-color:#FFF"></iframe>
+          <iframe src="http://bl.ocks.org/MappingKat/efc18d8b5193c8561b92" style="background-color:#FFF"></iframe>
         </section>
         <section>
           <iframe src="http://bl.ocks.org/wboykinm/raw/b90873f4015fd8a8759e/"></iframe>
+        </section>
+        <section>
+          <img src="img/map-interface.png">
         </section>
         <section data-background="img/bootleaf.png">
            <h2 style="background-color:green;color:white;margin-top:20px;padding:15px;">Bootleaf</h2>
@@ -332,6 +322,7 @@
         <section>
           <img src="img/nps.svg">
           <br>
+          <p>Custom Stack:</p>
           <a target="_blank" href="//github.com/nationalparkservice" style="color:#000">www.github.com/nationalparkservice</a>
           <!-- park service-- custom mapping tool -->
           <!-- highly custom webmaps -->
@@ -340,22 +331,10 @@
           <iframe src="http://mappingkat.github.io/indian-removal/"></iframe>
         </section>
         <section>
-          <img src="img/fulcrum-carto.png">
+          <img src="img/fulcrum-carto.png" style="width:700px;height:auto;">
         </section>
         <section>
           <iframe src="https://team.cartodb.com/u/mamataakella/viz/a23ea514-624e-11e5-bcfb-0e853d047bba/embed_map"></iframe>
-        </section>
-        <section>
-          <h2>Planning a web map</h2>
-          <ul style="font-size:36px">
-            <li class="orange">What is the purpose of the map?</li>
-            <li class="blue">Where can I get the data?</li>
-            <li class="pink">Will the map be queried for additional information?</li>
-            <li class="purple">Will the map be viewed on multiple devices?</li>
-          </ul>
-        </section>
-        <section>
-          <img src="img/fulcrum-carto.png">
         </section>
         <section>
           <img src="img/data-options.png" style="width:800px;height:auto;">
@@ -363,31 +342,50 @@
         <section>
           <img src="img/fulcrum-data-collection.png" style="bottom:0;left:0;">
         </section>
+         <section>
+          <h2>There are a range of industries that need data collection...</h2>
+          <img src="img/fields.jpg">
+        </section>
         <section>
-          <h2>Offline</h2>
+          <h2>Invasive Species</h2>
+          <img src="img/fulcrum-invasive.jpg" style="width:800px;height:auto;">
+        </section>
+        <section>
+          <h2>Bike Theft</h2>
+          <img src="img/fulcrum-bike.png">
+        </section>
+        <section>
+          <h2>Why use Fulcrum?</h2>
+        </section>
+        <section>
+          <h2>Work Offline</h2>
           <img src="img/fulcrum-offline.png">
         </section>
         <section>
-          <h2>Record Linking</h2>
+          <h2>Link Records, or Lookup Tables</h2>
           <img src="img/fulcrum-record-linking.png">
         </section>
          <section>
-          <h2>Calculated Fields</h2>
+          <h2>Use Calculated Fields</h2>
           <img src="img/fulcrum-calculating.jpg">
         </section>
         <section>
-          <h2>Webhooks</h2>
+          <h2>Real Time Data via Webhooks</h2>
           <img src="img/fulcrum-webhooks.png" >
         </section>
         <section>
-          <h2>Integrations</h2>
-          <img src="img/fulcrum-integrations.png" style="height:250px;">
+          <h2>Integration with a variety of tools</h2>
+          <img src="img/fulcrum-integrations.png" style="height:170px;width:1000px">
         </section>
         <section>
+          <p>For example, We use Zapier to sync Fulcrum app with Slack</p>
           <img src="img/fulcrum-geobooze.png" style="height:600px;width:1100px">
         </section>
         <section>
           <img src="img/cartodb-logo.png">
+        </section>
+        <section>
+          <h2>Why use CartoDB?</h2>
         </section>
         <section>
           <h3>Using CartoDB you can:</h3>
@@ -403,7 +401,7 @@
         </section>
         <section>
           <h2>CartoDB combines:</h2>
-          <ul>
+          <ul style="font-size:36px">
             <li class="pink">the power of PostGIS and SQL</li>
             <li class="purple">CartoCSS for map styling</li>
             <li class="blue">Mapnik for tile rendering</li>
@@ -414,21 +412,79 @@
           <h2>These technologies are all packaged into one easy-to-use online interface.</h2>
         </section>
         <section>
-           <h1>Demo!</h1>
+           <h2>Demo with <a href="http://www.fulcrumapp.com/blog/webhooks-update-cartodb/">Fulcrum and CartoDB</a> integration</h2>
         </section>
-        <!-- <section>
+        <section>
+          <h3>Ok! Let's start building the map!</h3>
+          <ul>
+            <li>First, we collected co-working spaces and breweries in Fulcrum</li>
+            <li>Then grab Denver neighborhood polygons and transportation stops (bcycle, light rail and bus stops) from online</li>
+            <li>Then we counted how many of these amenities (co-working spaces, breweries, transportation stops) were in each neighborhood</li>
+            <li>Lastly, we customized the map and styled accordingly</li>
+          </ul>
+        </section>
+        <section>
           <img src="img/fulcrum-web-1.jpg" style="width:800px;height:auto;">
         </section>
         <section>
           <img src="img/fulcrum-web.jpg" style="width:800px;height:auto;">
         </section>
         <section>
-          <h2>There are a range of industries that use maps...</h2>
-          <img src="img/fields.jpg">
+          <img src="img/fulcrum-app.png" style="width:800px;height:auto;">
+        </section>
+         <section>
+          <img src="img/import.png" style="width:800px;height:auto;">
+        </section>
+         <section>
+          <img src="img/data-share.png" style="width:800px;height:auto;">
+        </section>
+         <section>
+          <img src="img/paste-link.png" style="width:800px;height:auto;">
         </section>
         <section>
-          <img src="img/fulcrum-invasive.jpg" style="width:800px;height:auto;">
-        </section>  -->
+          <h1>Next, we followed the same steps for Denver breweries (collecting in Fulcrum and linking with data shares in CartoDB.</h1>
+          <p>Then, we grabbed neighborhood polygons and transportation points from <a href="http://data.denvergov.org/">Denver gov</a> and added those to CartoDB.</p></h1>
+        </section>
+        <section>
+          <h2><span class="red">Spatial Join</span> between Denver Neighborhoods and co-working spaces</h2>
+        </section>
+        <section>
+          <h3>Add numeric column and count the number of features in each neighborhood</h3>
+          <pre><code>
+          UPDATE 
+           denver_neighborhoods
+          SET 
+           busstops_count = (SELECT count(*)
+          FROM 
+           busstops 
+          WHERE 
+           ST_Intersects(busstops.the_geom,denver_neighborhoods.the_geom))
+          </pre></code>
+        </section>
+        <section>
+          <h3>Add a total_count field and sum all of the values to one field (to style the labels)</h3>
+          <pre><code>
+          UPDATE 
+           denver_neighborhoods_with_counts
+          SET 
+           total_count =(bcycle_count+breweries_count+lightrail_count+busstops_count)
+           </pre></code>
+        </section>
+        <section>
+           Added numeric column and count the number of features in each neighborhood
+           <img src="">
+        </section>
+        <section>
+          Change basemap
+        </section>
+        <section>
+          <h3>Pop-up content</h3>
+          <p>Color for co-working labels</p>
+          <pre><code><h2 style="color:#ECBE13">{{name}}</h2></pre></code>
+          <p>Color for neighborhood labels</p>
+          <pre><code><h2 style="color: #738C79;">{{nbhd_name}}</h2></pre></code>
+        </section>
+
       <section>
         <h2>Resources</h2>
         <ul style="font-size:36px">
@@ -440,21 +496,17 @@
         </ul>
       </section>
     </div>
-    <script src="assets/js/head.min.js"></script>
-    <script src="assets/js/reveal.js"></script>
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
     <script>
-      Reveal.initialize({
-        center: false,
-        controls: true,
-        height: 700,
-        history: true,
-        overview: false,
-        progress: true,
-        theme: Reveal.getQueryHash().theme || 'green',
-        transition: Reveal.getQueryHash().transition || 'linear',
-        width: 1100
-      });
+    Reveal.initialize({
+      controls: true,
+      progress: true,
+      history: true,
+      center: true,
+      theme: Reveal.getQueryHash().theme || 'green',
+      transition: Reveal.getQueryHash().transition || 'linear'
+    });
     </script>
-    <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create','------','mappingkat.github.io');ga('send','pageview');</script>
   </body>
 </html>
