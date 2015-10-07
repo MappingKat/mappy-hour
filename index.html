@@ -418,7 +418,7 @@
           <h3>Ok! Let's start building the map!</h3>
           <ul style="font-size:26px">
             <li>First, we collected co-working spaces and breweries in Fulcrum</li>
-            <li>Then grab Denver neighborhood polygons and transportation stops (bcycle, light rail and bus stops) from online</li>
+            <li>Then grab Denver neighborhood polygons and transportation stops (B-cycle stations, light rail and bus stops) from online</li>
             <li>Then we counted how many of these amenities (co-working spaces, breweries, transportation stops) were in each neighborhood</li>
             <li>Lastly, we customized the map and styled accordingly</li>
           </ul>
@@ -479,17 +479,20 @@
           <img src="img/cartodb-cartocss.png">
         </section>
         <section>
-          <h3>Style the points</h3>
+          <h3>Style the popups</h3>
           <img src="img/cartodb-popup.png">
         </section>
         <section>
           <h3>Pop-up content</h3>
           <p>Color for co-working labels</p>
-          <pre><code><h2 style="color:#ECBE13">{{name}}</h2></pre></code>
+          <pre><code>
+            &lt;h2&gt; style="color:#ECBE13">{{name}}&lt;/h2&gt;
+          </pre></code>
           <p>Color for neighborhood labels</p>
-          <pre><code><h2 style="color: #738C79;">{{nbhd_name}}</h2></pre></code>
+          <pre><code>
+            &lt;h2&gt; style="color: #738C79;">{{nbhd_name}}&lt;/h2&gt;
+          </pre></code>
         </section>
-
       <section>
         <h2>Resources</h2>
         <ul style="font-size:36px">
